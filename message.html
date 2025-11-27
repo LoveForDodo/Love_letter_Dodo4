@@ -1,99 +1,120 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dodo's Special Page ❤️</title>
+    <meta charset="UTF-8">
+    <title>To My Dodo ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
+    <style>
 
-    body {
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #ffe6f0, #ffccd9);
-        font-family: "Arial", sans-serif;
-        overflow-x: hidden;
-        text-align: center;
-    }
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #ffe5ec, #ffd6e8);
+            font-family: "Arial", sans-serif;
+            overflow-x: hidden;
+        }
 
-    /* 🔥 اسم دودو المتحرك */
-    .dodo-name {
-        font-size: 38px;
-        margin-top: 30px;
-        color: #d63384;
-        font-weight: bold;
-        animation: heartbeat 1.5s infinite;
-        letter-spacing: 2px;
-    }
+        /* البرواز اللي فيه الاسم */
+        .frame-box {
+            width: 80%;
+            margin: 30px auto 10px;
+            padding: 15px;
+            border: 5px solid #d63384;
+            border-radius: 20px;
+            background: #ffffffcc;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #d63384;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
 
-    @keyframes heartbeat {
-        0% { transform: scale(1); }
-        30% { transform: scale(1.25); }
-        50% { transform: scale(1); }
-        70% { transform: scale(1.25); }
-        100% { transform: scale(1); }
-    }
+        /* الاسم اللي يطلع من تحت لفوق */
+        .float-name {
+            position: fixed;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 32px;
+            color: #ff4d6d;
+            animation: floatUp 5s linear infinite;
+            font-weight: bold;
+        }
 
-    /* ✨ البرواز المتعلّق */
-    .frame-container {
-        width: 330px;
-        margin: 40px auto;
-        position: relative;
-    }
+        @keyframes floatUp {
+            0% { transform: translate(-50%,0) scale(1); opacity: 1; }
+            100% { transform: translate(-50%,-120vh) scale(1.4); opacity: 0; }
+        }
 
-    .string {
-        width: 3px;
-        height: 80px;
-        background: #333;
-        margin: 0 auto;
-    }
+        /* الصورة المعلقة */
+        .photo-frame {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 18px;
+            border: 3px solid #ffb3c6;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            position: relative;
+        }
 
-    .pin {
-        width: 18px;
-        height: 18px;
-        background: #ff4d6d;
-        border-radius: 50%;
-        margin: 0 auto;
-        position: relative;
-        top: -9px;
-        box-shadow: 0 0 10px rgba(255,77,109,0.7);
-    }
+        .photo-frame img {
+            width: 100%;
+            border-radius: 12px;
+        }
 
-    .frame {
-        width: 330px;
-        padding: 10px;
-        background: #fff7ef;
-        border: 8px solid #c49b6a;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-        transform: rotate(-2deg);
-        transition: 0.4s;
-    }
+        /* الخيط اللي معلق البرواز */
+        .photo-frame::before {
+            content: "";
+            width: 3px;
+            height: 70px;
+            background: #d63384;
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-    .frame:hover {
-        transform: rotate(0deg) scale(1.03);
-    }
+        .photo-frame::after {
+            content: "🔗";
+            position: absolute;
+            top: -85px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+        }
 
-    .frame img {
-        width: 100%;
-        border-radius: 4px;
-    }
+        /* الجملة تحت الصورة */
+        .love-text {
+            text-align: center;
+            font-size: 22px;
+            color: #444;
+            margin-top: -10px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
 
-</style>
-
+    </style>
 </head>
+
 <body>
 
-    <!-- 🔥 اسم دودو -->
-    <div class="dodo-name">Dodo ❤️✨</div>
+    <!-- البرواز اللي فوق -->
+    <div class="frame-box">
+        Do3ty🫠🥰
+    </div>
 
-    <!-- 📸 البرواز المتعلق -->
-    <div class="frame-container">
-        <div class="string"></div>
-        <div class="pin"></div>
-        <div class="frame">
-            <img src="1764248956999.jpg" alt="Dodo Photo">
-        </div>
+    <!-- الاسم اللي بيطلع لفوق -->
+    <div class="float-name">دو🫶🏻🥰</div>
+
+    <!-- الصورة المعلقة -->
+    <div class="photo-frame">
+        <img src="1764248956999.jpg" alt="Dodo Photo">
+    </div>
+
+    <!-- الجملة تحت الصورة -->
+    <div class="love-text">
+        كل هذا صُنع بكل حب لصغيرتي دو🙈♥️🥰🥰
     </div>
 
 </body>
