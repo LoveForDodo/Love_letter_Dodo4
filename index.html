@@ -1,152 +1,160 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Love Letter for Doaa (DODO)</title>
-<style>
-  :root{
-    --pink:#ff7aa2;
-    --bg:#f7e9ef;
-    --card:#ffffff;
-    --text:#333;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0; font-family: 'Segoe UI', Tahoma, sans-serif;
-    background:linear-gradient(180deg, #fff 0%, var(--bg) 100%);
-    color:var(--text); -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale; padding:28px;
-  }
-  header{max-width:900px;margin:0 auto 18px; text-align:center;}
-  h1{margin:0;font-size:28px;color:var(--pink)}
-  p.lead{margin:6px 0 0;opacity:.9}
-  .wrap{max-width:900px;margin:18px auto;display:grid;gap:18px;grid-template-columns:1fr;}
-  .card{background:var(--card);border-radius:16px;padding:22px;box-shadow:0 6px 20px rgba(0,0,0,.06);}
-  .row{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
-  .img-box{
-    flex:1 1 280px; min-height:200px;border-radius:12px;
-    border:2px dashed rgba(255,122,162,.35); display:flex;
-    align-items:center;justify-content:center;background-size:cover;
-    background-position:center; color:var(--pink); font-weight:600;
-  }
-  .text{flex:1 1 320px; text-align:right}
-  .text h3{margin:0 0 6px;font-size:20px;color:var(--pink)}
-  .text p{margin:0;color:#444;opacity:.95;line-height:1.5}
-  .controls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:12px}
-  .btn{background:var(--pink);color:#fff;padding:10px 16px;border-radius:10px;border:none;cursor:pointer}
-  input[type=file]{display:none}
-  label.file{background:transparent;border:1px solid rgba(0,0,0,.06);padding:8px 12px;border-radius:8px;cursor:pointer}
-  footer{max-width:900px;margin:20px auto;text-align:center;color:#666;font-size:14px}
-  /* small screens */
-  @media (max-width:720px){
-    .row{flex-direction:column-reverse}
-    .img-box, .text{width:100%}
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter Dodo</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #ffe5ec, #ffd6e8);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 25px;
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+        }
+
+        .romantic-title {
+            text-align: center;
+            color: #d63384;
+            margin-bottom: 25px;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        .love-img {
+            width: 90%;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        .text {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        /* ❤️ القلوب المتحركة */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 25px;
+            color: #ff4d6d;
+            animation: floatUp 4s linear;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh) scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        /* زر الأغنية */
+        #playBtn {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: glow 1.5s infinite alternate;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #playBtn:hover {
+            background: #ff4757;
+            transform: scale(1.05);
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px #ff6b81; }
+            to { box-shadow: 0 0 20px #ff4757; }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-  <h1>رسالة حب لـ Doaa (DODO)</h1>
-  <p class="lead">ممكن تضيفي الصور بسهولة: اضغطي على زرّ 'اختيار صورة' قدام كل فقرة عشان تشوفي المعاينة فوراً.</p>
-</header>
 
-<div class="wrap">
+    <!-- محتوى الصور -->
+    <div class="container">
+        <h1 class="romantic-title">❤️ رسالة ليكي يا دودو ❤️</h1>
 
-  <!-- Paragraph 1 -->
-  <section class="card">
-    <div class="row">
-      <div class="text">
-        <h3>لدواء… اللي قلبي بينطق اسمها قبل لساني ❤️</h3>
-        <p id="p1txt">يا Doaa، وجودك في حياتي عمل فرق كبير. كل لحظة معاكي — حتى لو مجرد كلام — بتغيّر يومي كله.</p>
-      </div>
-      <div class="img-box" id="img1">مكان الصورة الأولى</div>
+        <div style="text-align: center;">
+            <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="love-img">
+            <img src="5e9cf4903041a56951bf28c0286a026f.jpg" class="love-img">
+            <img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="love-img">
+        </div>
+
+        <p class="text">
+            كل صورة من دول ليها مكان في قلبي،  
+            وكل لحظة معاك أجمل من اللي قبلها ❤️  
+            وده مكان بسيط بيقولّك… قد إيه أنا بحبك يا دودو.
+        </p>
     </div>
-    <div class="controls">
-      <label class="file btn">اختيار صورة
-        <input type="file" accept="image/*" id="file1">
-      </label>
-      <button class="btn" onclick="resetImage(1)">إلغاء الصورة</button>
-    </div>
-  </section>
 
-  <!-- Paragraph 2 -->
-  <section class="card">
-    <div class="row">
-      <div class="text">
-        <h3>يا DODO… نبض قلبي الناعم 💗</h3>
-        <p id="p2txt">أنا مش بس بحبك… أنا متعلق بيكي، بصوتك، بطريقة كلامك، وبالحضور الدافي اللي معاكي.</p>
-      </div>
-      <div class="img-box" id="img2">مكان الصورة الثانية</div>
-    </div>
-    <div class="controls">
-      <label class="file btn">اختيار صورة
-        <input type="file" accept="image/*" id="file2">
-      </label>
-      <button class="btn" onclick="resetImage(2)">إلغاء الصورة</button>
-    </div>
-  </section>
+    <!-- زر تشغيل الأغنية -->
+    <audio id="bg-music">
+        <source src="Dodo.song.mp3" type="audio/mpeg">
+    </audio>
 
-  <!-- Paragraph 3 -->
-  <section class="card">
-    <div class="row">
-      <div class="text">
-        <h3>أجمل صدفة في حياتي ✨</h3>
-        <p id="p3txt">إنتي مش شبه حد… إنتي مختلفة، والاختلاف ده هو اللي خلاني أحبك من غير ما أفكر.</p>
-      </div>
-      <div class="img-box" id="img3">مكان الصورة الثالثة</div>
-    </div>
-    <div class="controls">
-      <label class="file btn">اختيار صورة
-        <input type="file" accept="image/*" id="file3">
-      </label>
-      <button class="btn" onclick="resetImage(3)">إلغاء الصورة</button>
-    </div>
-  </section>
+    <button id="playBtn">❤️ تشغيل الأغنية ❤️</button>
 
-  <!-- Login / DODO page -->
-  <section class="card" style="text-align:center">
-    <h3>مرحباً يا DODO ❤️</h3>
-    <p>ممكن تضعي كلمه سر بسيطة لو بتحبي تخلي الصفحة خاصة.</p>
-    <input id="pwd" placeholder="اكتبي دلعك DODO" style="padding:10px;border-radius:8px;border:1px solid #ddd;width:60%;max-width:280px;text-align:center" />
-    <div style="margin-top:12px">
-      <button class="btn" onclick="checkPwd()">ادخلي</button>
-    </div>
-    <p id="loginMsg" style="color:green;margin-top:10px;display:none">مرحباً يا DODO! فتحتي الصفحة ✨</p>
-  </section>
+    <!-- كود تشغيل الأغنية -->
+    <script>
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("playBtn");
 
-  <!-- Gallery (drop area) -->
-  <section class="card">
-    <h3>معرض صورنا — اسحبي الصور هنا لو عايزة</h3>
-    <div id="drop" class="img-box" style="min-height:140px">اسحبي الصور وافلتها هنا</div>
-    <p style="margin-top:10px;font-size:14px;color:#666">بيانات الصور بتكون محلية على جهازك — الموقع هنا ملف HTML بسيط يشتغل بدون رفع على الانترنت.</p>
-  </section>
+        btn.addEventListener("click", () => {
+            music.play();
+            btn.innerHTML = "🎶 الأغنية شغالة 🎶";
+            btn.style.background = "#2ed573";
+            btn.style.animation = "none";
+        });
+    </script>
 
-  <!-- Music -->
-  <section class="card" style="text-align:center">
-    <h3>أغنيتنا المفضلة 🎵</h3>
-    <p style="margin:6px 0 10px">تقدري تضيفي ملف MP3 لو عايزة يعمل تشغيل هنا أثناء العرض.</p>
-    <input type="file" accept="audio/*" id="musicFile" />
-    <div style="margin-top:12px">
-      <audio id="player" controls style="width:100%;max-width:420px"></audio>
-    </div>
-  </section>
+    <!-- كود القلوب المتحركة ❤️ -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
 
-</div>
+            const size = Math.random() * 30 + 20;
+            heart.style.fontSize = size + "px";
+            heart.style.left = Math.random() * window.innerWidth + "px";
 
-<footer>
-  <small>صنع بحب — حرر الكود كما تحب، وإذا حابب أعدّلك نسخة PDF أو أضيف تأثيرات أكثر قولّي 😍</small>
-</footer>
+            document.body.appendChild(heart);
 
-<script>
-  function previewFile(inputEl, targetId){
-    const file = inputEl.files && inputEl.files[0];
-    const box = document.getElementById(targetId);
-    if(!file){ return; }
-    const reader = new FileReader();
-    reader.onload = function(e){
-      box.style.backgroundImage = 'url(' + e.target.result + ')';
-      box.textContent = '';
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+
+        setInterval(createHeart, 400);
+    </script>
+
+</body>
+</html>      box.textContent = '';
     }
     reader.readAsDataURL(file);
   }
