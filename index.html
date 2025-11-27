@@ -11,7 +11,35 @@
             background: linear-gradient(135deg, #ffe6f2, #ffd1e8);
             font-family: "Tajawal", sans-serif;
         }
+<!-- برواز الترحيب -->
+<div id="welcomeBox">
+    Kingdom of Dodo 🙈👑🦋
+</div>
 
+<style>
+    #welcomeBox {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(135deg, #ff6b81, #ff4757);
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        opacity: 0;
+        transform: translateY(-30px);
+        animation: fadeInDown 1.4s forwards ease-out;
+    }
+
+    @keyframes fadeInDown {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
         /* شاشة الدخول */
         #loginScreen {
             position: fixed;
