@@ -2,54 +2,54 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>Letter for Dodo ❤️</title>
+    <title>رسالة إلى دودو ❤️</title>
 
     <style>
         body {
             margin: 0;
-            background: linear-gradient(135deg, #ffe5ec, #ffd6e8);
-            font-family: 'Amiri', serif;
+            background: #f9e7cf;
+            font-family: "Cambria", serif;
         }
 
-        .paper-container {
+        .paper {
             max-width: 800px;
             margin: 50px auto;
-            padding: 30px;
-            background: url('https://i.imgur.com/yZ9xN2X.png');
+            background: #fff4db;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background-image: url('https://i.imgur.com/feK3uIS.png'); 
             background-size: cover;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            animation: fadeIn 2s ease;
-        }
-
-        .letter-text {
+            background-position: center;
             font-size: 24px;
-            color: #3b2f2f;
-            line-height: 2;
-            padding: 20px;
-            white-space: pre-line;
+            line-height: 1.8;
+            color: #4a2e0b;
+            border: 2px solid #d3b48c;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #b76e79;
+            font-weight: bold;
         }
 
-        .back-btn {
+        .home-btn {
             display: block;
-            margin: 30px auto;
-            padding: 12px 25px;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 24px;
             background: #ff6b81;
             color: white;
             font-size: 20px;
-            text-decoration: none;
-            border-radius: 12px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
             transition: 0.3s;
-            text-align: center;
-            width: fit-content;
         }
 
-        .back-btn:hover {
+        .home-btn:hover {
             background: #ff4757;
             transform: scale(1.05);
         }
@@ -58,31 +58,37 @@
 
 <body>
 
-    <div class="paper-container">
-        <div class="letter-text">
-في حاجات في الدنيا ربنا بيبعتها من غير ما نطلب،
-ومن غير ما نستنى،
-بس تيجي… وتغيّر كل حاجة.
+    <div class="paper">
 
-وإنتِ بالظبط كنتِ كده.
+        <div class="title">❤️ رسالة مكتوبة بخط القلب ❤️</div>
 
-جيتِ في وقت مكنتش متوقع فيه أي خير…
-ولقيت فجأة إن الدنيا بتبتسم،
-وإن قلبي بيهدى،
-وإن روحي بتتسند عليكِ من غير ما أتكلم.
+        <p>
+        في حاجات في الدنيا ربنا بيبعتها من غير ما نطلب،
+        ومن غير ما نستنى،
+        بس تيجي… وتغيّر كل حاجة.
+        <br><br>
+        وإنتِ بالظبط كنتِ كده.
+        <br><br>
+        جيتِ في وقت مكنتش متوقع فيه أي خير…
+        ولقيت فجأة إن الدنيا بتبتسم،
+        وإن قلبي بيهدى،
+        وإن روحي بتتسند عليكِ من غير ما أتكلم.
+        <br><br>
+        إنتِ مختلفة…
+        مختلفة في نظرتك، في طريقتك، في وجودك،
+        حتى في التفاصيل الصغيرة اللي محدش بياخد باله منها…
+        أنا باخد بالي منها كلها.
+        <br><br>
+        إنتِ مختلفة…
+        وكونك مختلفة
+        هو أجمل حاجة حصلت لي في حياتي. 🥰❤️
+        </p>
 
-إنتِ مختلفة…
-مختلفة في نظرتك، في طريقتك، في وجودك،
-حتى في التفاصيل الصغيرة اللي محدش بياخد باله منها…
-أنا باخد بالي منها كلها.
-
-إنك مختلفة…
-وكونك مختلفة
-هو أجمل حاجة حصلت لي في حياتي.🥰♥️♥️
-        </div>
     </div>
 
-    <a class="back-btn" href="index.html">⬅ ارجعي للصفحة الأولى يا دودو ❤️</a>
+    <button class="home-btn" onclick="window.location.href='index.html'">
+        الرجوع للصفحة الرئيسية ❤️
+    </button>
 
 </body>
 </html>
