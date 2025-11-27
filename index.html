@@ -1,194 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dodo Kingdom</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom of Dodo 👑🦋</title>
 
 <style>
-    body {
-        margin: 0;
-        background: linear-gradient(135deg, #ffe5ec, #ffd6e8);
-        font-family: Arial, sans-serif;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #ffe6ef, #ffd9f3);
+    font-family: "Tajawal", sans-serif;
+    overflow-x: hidden;
+}
 
-    .container {
-        max-width: 850px;
-        margin: 40px auto;
-        padding: 20px;
-        background: rgba(255,255,255,0.8);
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
+/* شاشة الدخول */
+#loginScreen {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 230, 240, 0.95); /* غير شفاف */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
 
-    .photo {
-        width: 95%;
-        border-radius: 14px;
-        display: block;
-        margin: 20px auto;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-    }
+#loginBox {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+}
 
-    .text-box {
-        text-align: center;
-        font-size: 19px;
-        margin-bottom: 25px;
-        color: #444;
-        font-weight: bold;
-    }
+#loginBox h2 {
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
 
-    /* زر تشغيل الأغنية */
-    #musicBtn, #videoBtn {
-        background: #ff6b81;
-        color: white;
-        border: none;
-        padding: 12px 25px;
-        font-size: 18px;
-        border-radius: 30px;
-        cursor: pointer;
-        transition: 0.3s;
-        animation: glow 1.5s infinite alternate;
-        display: block;
-        margin: 15px auto;
-    }
+#pwd {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ff8fab;
+    margin-bottom: 10px;
+}
 
-    #musicBtn:hover, #videoBtn:hover {
-        transform: scale(1.07);
-    }
+#enterBtn {
+    padding: 10px 20px;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
 
-    @keyframes glow {
-        from { box-shadow: 0 0 10px #ff6b81; }
-        to { box-shadow: 0 0 20px #ff4757; }
-    }
+#enterBtn:hover {
+    background: #ff2b4d;
+}
 
-    /* زر الانتقال للصفحة الثانية */
-    .nextPage {
-        background: #845ef7;
-        color: white;
-        padding: 14px 30px;
-        border-radius: 25px;
-        font-size: 20px;
-        display: block;
-        margin: 25px auto;
-        border: none;
-        cursor: pointer;
-        transition: 0.3s;
-        animation: magic 2s infinite alternate;
-    }
+/* محتوى الصفحة */
+.container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255,255,255,0.75);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
-    @keyframes magic {
-        from { transform: scale(1); box-shadow: 0 0 10px #b197fc; }
-        to   { transform: scale(1.05); box-shadow: 0 0 25px #d0b3ff; }
-    }
+.photo {
+    width: 95%;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
 
-    .nextPage:hover {
-        transform: scale(1.1);
-    }
+.text-box {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #444;
+    font-weight: bold;
+}
 
-    /* القلوب + النجوم */
-    .floating {
-        position: fixed;
-        bottom: -20px;
-        font-size: 22px;
-        pointer-events: none;
-        animation: floatUp 4s linear;
-    }
+/* زر الأغنية */
+.btn {
+    background: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 15px auto;
+    display: block;
+    animation: glow 1.5s infinite alternate;
+}
 
-    @keyframes floatUp {
-        0%   { transform: translateY(0)   scale(1);   opacity: 1; }
-        100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
-    }
+.btn:hover { transform: scale(1.05); }
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px #ff6b81; }
+    to   { box-shadow: 0 0 20px #ff4757; }
+}
+
+/* زر الانتقال */
+#goMessage {
+    background: #8a2be2;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+/* قلوب + نجوم */
+.float {
+    position: fixed;
+    bottom: -20px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: floatUp 4s linear;
+}
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) scale(1);   opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- شاشة الدخول -->
+<div id="loginScreen">
+    <div id="loginBox">
+        <h2>✨ الدخول مسموح فقط لـ Dodo ✨</h2>
+        <p style="margin-bottom:5px;">ادخلي مملكتك يا ملكتي 👑🦋</p>
+        <input type="password" id="pwd" placeholder="اكتبي كلمة السر">
+        <button id="enterBtn">دخول</button>
+        <p id="loginMsg" style="color:red; font-weight:bold;"></p>
+    </div>
+</div>
 
-    <!-- الصور والجمل -->
+<!-- محتوى الصفحة -->
+<div class="container" id="mainContent" style="display:none;">
+
     <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo">
-    <div class="text-box">سأعتني بك ، رغم البعد بيننا، سأعتني بك في دعائى ، وفي صلاتي ، وبين أحرفي وثنايا ذاكرتي 🥹♥️♥️♥️</div>
+    <div class="text-box">
+        سأعتني بك ، رغم البعد بيننا  
+        سأعتني بك في دعائى ، وفي صلاتي ،  
+        وبين أحرفي  
+        وثنايا ذاكرتي 🥹♥️♥️♥️
+    </div>
 
     <img src="5e9cf4903041a56951bf28c0286a026f.jpg" class="photo">
-    <div class="text-box">كيف جعلتِ هذا القلب… بعد حبك ناصحًا؟ ♥️</div>
+    <div class="text-box">
+        كيف جعلتِ هذا القلب  
+        بعد حبك ناصحًا؟ ♥️
+    </div>
 
     <img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="photo">
-    <div class="text-box">ولكِ في الروح عشق لا ينتهي… فكيف لا تدمنك روحي وأنتِ دوائها؟! 🫠♥️</div>
+    <div class="text-box">
+        ولكِ في الروح عشق لا ينتهي،  
+        فكيف لا تدمنك روحي وأنتِ دوائها! 🫠♥️
+    </div>
 
-    <!-- تشغيل/إيقاف الأغنية -->
-    <audio id="bgm">
+    <!-- الأغنية -->
+    <audio id="music">
         <source src="Dodo.song.mp3" type="audio/mpeg">
     </audio>
 
-    <button id="musicBtn">❤️ تشغيل الأغنية ❤️</button>
+    <button class="btn" id="musicBtn">تشغيل الأغنية 🎵</button>
 
     <!-- الفيديو -->
-    <video id="dodoVid" width="95%" style="display:none; margin:20px auto; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.25);" controls>
+    <video id="vid" width="100%" style="border-radius:20px; display:none;">
         <source src="dodo_video.mp4" type="video/mp4">
     </video>
 
-    <button id="videoBtn">🎬 تشغيل الفيديو 🎬</button>
+    <button class="btn" id="videoBtn">تشغيل الفيديو 🎥</button>
 
-    <!-- زر الصفحة الثانية -->
-    <button class="nextPage" onclick="location.href='page2.html'">ممكن تضغطي هنا 🙈♥️🥰</button>
+    <!-- زر الانتقال -->
+    <button id="goMessage" class="btn" onclick="location.href='message.html'">
+        ممكن تضغطي هنا 🙈♥️🥰
+    </button>
 
 </div>
 
-<!-- ********** SCRIPTS ********** -->
-
 <script>
-// Toggle Music
-let isMusicPlaying = false;
-const music = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
+// شاشة الدخول
+document.getElementById("enterBtn").onclick = function() {
+    if (document.getElementById("pwd").value === "Do3ty♡") {
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+    } else {
+        document.getElementById("loginMsg").innerText = "كلمة السر غلط يا دودو 🥺";
+    }
+};
 
-musicBtn.onclick = () => {
-    if (!isMusicPlaying) {
+// الأغنية
+let music = document.getElementById("music");
+let mBtn = document.getElementById("musicBtn");
+let playingMusic = false;
+
+mBtn.onclick = () => {
+    if (!playingMusic) {
         music.play();
-        musicBtn.innerText = "⏸ إيقاف الأغنية";
-        isMusicPlaying = true;
+        mBtn.innerHTML = "إيقاف الأغنية ⏸️";
+        playingMusic = true;
     } else {
         music.pause();
-        musicBtn.innerText = "❤️ تشغيل الأغنية ❤️";
-        isMusicPlaying = false;
+        mBtn.innerHTML = "تشغيل الأغنية 🎵";
+        playingMusic = false;
     }
 };
 
-// Toggle Video
-let isVideoShown = false;
-const vid = document.getElementById("dodoVid");
-const videoBtn = document.getElementById("videoBtn");
+// الفيديو
+let vid = document.getElementById("vid");
+let vBtn = document.getElementById("videoBtn");
+let playingVideo = false;
 
-videoBtn.onclick = () => {
-    if (!isVideoShown) {
-        vid.style.display = "block";
-        videoBtn.innerText = "⏸ إيقاف الفيديو";
+vBtn.onclick = () => {
+    vid.style.display = "block";
+    if (!playingVideo) {
         vid.play();
-        isVideoShown = true;
+        vBtn.innerHTML = "إيقاف الفيديو ⏸️";
+        playingVideo = true;
     } else {
         vid.pause();
-        vid.style.display = "none";
-        videoBtn.innerText = "🎬 تشغيل الفيديو 🎬";
-        isVideoShown = false;
+        vBtn.innerHTML = "تشغيل الفيديو 🎥";
+        playingVideo = false;
     }
 };
 
-// Hearts + Stars Floating
-function createFloating() {
+// قلوب ونجوم
+function floatThing() {
     const el = document.createElement("div");
-    el.classList.add("floating");
-    
-    const symbols = ["❤️", "✨", "💖", "⭐"]; 
-    el.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+    el.classList.add("float");
 
     el.style.left = Math.random() * window.innerWidth + "px";
-    el.style.fontSize = (Math.random()*15 + 20) + "px";
+    el.style.fontSize = (Math.random()*15+20) + "px";
+
+    el.innerHTML = Math.random() > 0.5 ? "❤️" : "⭐";
 
     document.body.appendChild(el);
+
     setTimeout(() => el.remove(), 4000);
 }
-setInterval(createFloating, 400);
+setInterval(floatThing, 500);
 </script>
 
 </body>
