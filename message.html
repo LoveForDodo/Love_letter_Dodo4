@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dodo's Special Page ❤️</title>
+<title>Dodo Message ❤️</title>
 
 <style>
 
@@ -14,30 +14,29 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== عنوان Do3ty في إطار جميل ===== */
-.top-frame {
-    margin: 25px auto 15px;
-    width: 300px;
+/* ===== 1) عنوان Do3ty في إطار جميل ===== */
+.title-box {
+    margin: 40px auto 10px;
+    padding: 12px 25px;
+    background: #fff;
+    border: 6px solid #ff4d6d;
+    border-radius: 20px;
     text-align: center;
-    padding: 12px;
-    background: white;
-    border: 6px solid #ff8fa3;
-    border-radius: 15px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    font-size: 28px;
+    width: fit-content;
+    font-size: 30px;
     font-weight: bold;
     color: #d63384;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
-/* ===== الصورة المعلقة ===== */
+/* ===== 2) إطار الصورة المعلقة ===== */
 .frame-container {
     width: 330px;
-    margin: 40px auto 20px;
+    margin: 50px auto 20px;
     position: relative;
     text-align: center;
 }
 
-/* الحبل المثلث */
 .rope {
     width: 0;
     height: 0;
@@ -47,20 +46,18 @@ body {
     margin: 0 auto;
 }
 
-/* الدبوس */
 .pin {
     width: 35px;
     height: 35px;
     background: radial-gradient(circle, #ff4d6d, #b30027);
     border-radius: 50%;
     position: absolute;
-    top: -12px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
 }
 
-/* إطار البرواز */
 .frame {
     width: 330px;
     padding: 10px;
@@ -70,86 +67,88 @@ body {
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
-/* الصورة داخل البرواز */
 .photo {
     width: 100%;
     border-radius: 8px;
 }
 
-/* ===== صورة الرسالة ===== */
+.frame-title {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #d63384;
+}
+
+/* ===== 3) صورة الرسالة + الزر ===== */
 .message-box {
-    width: 330px;
-    margin: 25px auto;
     text-align: center;
+    margin-top: 25px;
 }
 
-.message-box img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+.message-image {
+    width: 90%;
+    max-width: 350px;
+    border-radius: 15px;
+    border: 5px solid #ff8fa3;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
 }
 
-/* زر فتح الرسالة */
-.msg-btn {
-    display: block;
-    width: fit-content;
-    margin: 12px auto 5px;
+.message-btn {
     background: #ff6b81;
     color: white;
-    padding: 10px 22px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-bottom: 40px;
+}
+
+/* ===== 4) فيديو داخل برواز ورد ===== */
+.video-frame {
+    width: 90%;
+    max-width: 350px;
+    background: #fff;
+    border: 8px solid #ffadc8;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.video-frame video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.play-btn {
+    margin: 10px auto 0;
+    display: block;
+    background: #ff4d6d;
+    color: #fff;
+    padding: 10px 25px;
     border-radius: 25px;
     font-size: 18px;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* ===== فيديو داخل برواز قلوب ===== */
-.video-frame {
-    width: 350px;
-    margin: 30px auto;
-    padding: 12px;
-    border: 6px solid #ff8fa3;
-    border-radius: 20px;
-    background: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-video {
-    width: 100%;
-    border-radius: 12px;
-}
-
-/* أزرار التشغيل */
-.play-btn {
-    display: block;
-    width: fit-content;
-    margin: 8px auto 0;
-    padding: 10px 22px;
-    background: #d63384;
-    color: white;
-    font-size: 17px;
-    border-radius: 25px;
-    cursor: pointer;
     border: none;
 }
 
-/* ===== الجملة تحت ===== */
+/* ===== 6) الجملة تحت ===== */
 .footer-text {
     text-align: center;
     font-size: 20px;
     margin-top: 25px;
-    line-height: 1.6;
     color: #444;
-    padding: 0 15px;
 }
 
-/* ===== زر الرجوع ===== */
+/* ===== 7) زر الرجوع ===== */
 .back-btn {
     display: block;
     width: fit-content;
-    margin: 25px auto;
+    margin: 25px auto 10px;
     background: #ff6b81;
-    color: white;
+    color: #fff;
     padding: 12px 25px;
     border-radius: 30px;
     font-size: 20px;
@@ -157,12 +156,12 @@ video {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Powered */
-.powered {
+/* ===== 8) Powered by Body 2025 ===== */
+.power {
     text-align: center;
-    color: #222;
-    font-size: 15px;
-    margin-bottom: 25px;
+    margin: 10px 0 20px;
+    font-size: 14px;
+    color: #333;
 }
 
 /* ===== الاسم المتطاير ===== */
@@ -185,120 +184,48 @@ video {
 
 <body>
 
-<!-- 1) اسم Do3ty -->
-<div class="top-frame">Do3ty 🫠🥰</div>
+<!-- ===== 1) عنوان Do3ty ===== -->
+<div class="title-box">Do3ty 🫠🥰</div>
 
-<!-- 2) الصورة المعلقة -->
+<!-- ===== 2) الصورة المعلقة ===== -->
 <div class="frame-container">
     <div class="rope"></div>
     <div class="pin"></div>
 
     <div class="frame">
         <img src="1764248956999.jpg" class="photo">
+        <div class="frame-title">دو🫶🏻🥰</div>
     </div>
 </div>
 
-<!-- 3) صورة الرسالة مع زر -->
+<!-- ===== 3) صورة الرسالة ===== -->
 <div class="message-box">
-    <a href="Dodo's message.jpg" target="_blank" class="msg-btn">Message for you ❤️</a>
+    <img src="Dodo's message.jpg" class="message-image">
+    <a href="Dodo's message.jpg" class="message-btn" target="_blank">✨ Message For You ✨</a>
 </div>
 
-<!-- 4) الفيديو الأول -->
+<!-- ===== 4) الفيديو الأول ===== -->
 <div class="video-frame">
-    <video id="vid1">
-        <source src="VID_20251128_131744_658.mp4" type="video/mp4">
-    </video>
-    <button class="play-btn" onclick="toggleVideo('vid1', this)">▶ تشغيل / إيقاف</button>
+    <video id="vid1" src="VID_20251128_131744_658.mp4"></video>
+    <button class="play-btn" onclick="toggleVideo('vid1', this)">▶ تشغيل</button>
 </div>
 
-<!-- 5) الفيديو الثاني -->
+<!-- ===== 5) الفيديو الثاني ===== -->
 <div class="video-frame">
-    <video id="vid2">
-        <source src="Asala_details_something.mp4.mp4" type="video/mp4">
-    </video>
-    <button class="play-btn" onclick="toggleVideo('vid2', this)">▶ تشغيل / إيقاف</button>
+    <video id="vid2" src="Asala_details_something.mp4.mp4"></video>
+    <button class="play-btn" onclick="toggleVideo('vid2', this)">▶ تشغيل</button>
 </div>
 
-<!-- 6) الجملة -->
-<div class="footer-text">
-كل هذا صُنع بكل حب لصغيرتي دو 🙈♥️🥰🥰
-</div>
-
-<!-- 7) زر الرجوع -->
-<a href="index.html" class="back-btn">🔙 ارجعي لحضني 😂❤️</a>
-
-<!-- 8) Powered -->
-<div class="powered">Powered by Body © 2025</div>
-
-
-<!-- ===== اسامي دو🫶🏻 تطلع من تحت ===== -->
-<script>
-function createFloatingName() {
-    const t = document.createElement("div");
-    t.classList.add("floatName");
-    t.innerHTML = "🫶🏻🥰دو";
-    t.style.left = Math.random() * window.innerWidth + "px";
-    t.style.fontSize = (Math.random() * 15 + 20) + "px";
-    document.body.appendChild(t);
-    setTimeout(() => t.remove(), 4000);
-}
-setInterval(createFloatingName, 450);
-
-
-/* ===== أزرار تشغيل وإيقاف الفيديو ===== */
-function toggleVideo(id, btn) {
-    const video = document.getElementById(id);
-
-    if (video.paused) {
-        video.play();
-        btn.innerText = "⏸ إيقاف";
-    } else {
-        video.pause();
-        btn.innerText = "▶ تشغيل";
-    }
-}
-</script>
-
-
-</body>
-</html>
-<!-- ===== عنوان Do3ty ===== -->
-<div class="top-frame">Do3ty 🫠🥰</div>
-
-<!-- ===== الصورة المعلقة ===== -->
-<div class="frame-container">
-    <div class="rope"></div>
-    <div class="pin"></div>
-
-    <div class="frame">
-        <img src="1764248956999.jpg" class="photo">
-    </div>
-</div>
-
-<!-- ===== الرسالة ===== -->
+<!-- ===== 6) الجملة تحت ===== -->
 <div class="footer-text">
     كل هذا صُنع بكل حب لصغيرتي دو🙈♥️🥰🥰
 </div>
 
-<!-- ===== الفيديو الأول ===== -->
-<div class="video-frame">
-    <video id="video1" src="VID_20251128_131744_658.mp4"></video>
-    <button class="play-btn" onclick="toggleVideo('video1')">تشغيل / إيقاف 🎬</button>
-</div>
+<!-- ===== 7) زر الرجوع ===== -->
+<a href="index.html" class="back-btn">🔙 اضغطي هنا بس براحه 🙈😂</a>
 
-<!-- ===== الفيديو الثاني ===== -->
-<div class="video-frame">
-    <video id="video2" src="Asala_details_something.mp4.mp4"></video>
-    <button class="play-btn" onclick="toggleVideo('video2')">تشغيل / إيقاف 🎶</button>
-</div>
-
-<!-- ===== زر الرجوع ===== -->
-<div style="margin-top:30px;">
-    <a href="index.html" class="back-btn">🔙 اضغطي هنا بس براحه 🙈😂</a>
-</div>
-
-<!-- ===== Powered by ===== -->
-<div class="powered">Powered by Body 2025</div>
+<!-- ===== 8) Powered by ===== -->
+<div class="power">Powered by Body 2025</div>
 
 <!-- ===== الاسم المتطاير ===== -->
 <script>
@@ -313,11 +240,17 @@ function createFloatingName() {
 }
 setInterval(createFloatingName, 450);
 
-/* ===== زر تشغيل وإيقاف الفيديو ===== */
-function toggleVideo(id) {
-    const vid = document.getElementById(id);
-    if (vid.paused) vid.play();
-    else vid.pause();
+/* زر تشغيل/إيقاف الفيديو */
+function toggleVideo(id, btn){
+    const v = document.getElementById(id);
+    
+    if(v.paused){
+        v.play();
+        btn.innerHTML = "⏸ إيقاف";
+    } else {
+        v.pause();
+        btn.innerHTML = "▶ تشغيل";
+    }
 }
 </script>
 
