@@ -3,17 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dodo Message ❤️</title>
+<title>Ramadan Kingdom of Do3ty 🌙👑</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Tajawal,sans-serif;
-background:radial-gradient(circle at top,#0b0b2a,#02010a);
-color:#fff;
+font-family:"Tajawal",sans-serif;
 overflow-x:hidden;
-padding-bottom:80px;
+background:radial-gradient(circle at top,#0b0b2a,#010008);
+color:#fff;
 }
 
 /* نجوم */
@@ -24,92 +23,200 @@ inset:0;
 background-image:
 radial-gradient(white 1px,transparent 1px),
 radial-gradient(gold 1px,transparent 1px);
-background-size:40px 40px,60px 60px;
-opacity:.25;
+background-size:40px 40px,70px 70px;
+opacity:.3;
+animation:twinkle 6s linear infinite;
 pointer-events:none;
 }
 
-/* عنوان */
-.title-frame{
-text-align:center;
-margin:25px auto;
-padding:12px 25px;
-border:3px solid gold;
-border-radius:15px;
-background:rgba(0,0,0,.6);
-font-size:28px;
-color:#ffd700;
-box-shadow:0 0 25px gold;
+@keyframes twinkle{
+50%{opacity:.6}
 }
 
-/* إطار */
-.frame-container{width:330px;margin:auto;text-align:center;}
-.frame{border:6px solid gold;border-radius:10px;background:#fff;}
-.photo{width:100%;border-radius:8px;}
+/* هلال */
+.moon{
+position:fixed;
+top:30px;
+right:25px;
+font-size:65px;
+filter:drop-shadow(0 0 15px gold);
+}
 
-.msg-btn,.vbtn,.back-btn{
+/* شاشة الدخول */
+#loginScreen{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.92);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#loginBox{
+background:rgba(5,5,30,.95);
+padding:30px;
+border-radius:20px;
+width:85%;
+max-width:360px;
+text-align:center;
+border:2px solid gold;
+box-shadow:0 0 40px rgba(255,215,0,.6);
+}
+
+#loginBox h2{color:#ffd700;}
+
+#pwd{
+width:90%;
+padding:12px;
+border-radius:12px;
+border:none;
+text-align:center;
+margin:12px 0;
+}
+
+#loginBtn{
+padding:10px 25px;
+background:linear-gradient(45deg,#d4af37,#f6d365);
+border:none;
+color:#000;
+border-radius:12px;
+cursor:pointer;
+}
+
+/* عنوان */
+#headerBox{
+text-align:center;
+padding:25px;
+font-size:34px;
+color:#ffd700;
+text-shadow:0 0 18px gold;
+}
+
+/* الصور */
+.photo{
+width:94%;
 display:block;
-margin:15px auto;
-padding:12px 25px;
+margin:25px auto 10px;
+border-radius:18px;
+box-shadow:0 0 30px rgba(255,215,0,.5);
+}
+
+.text-box{
+text-align:center;
+font-size:20px;
+font-weight:bold;
+margin-bottom:25px;
+}
+
+/* أزرار */
+.btn,#goMsg{
+display:block;
+margin:20px auto;
+padding:14px 28px;
 background:linear-gradient(45deg,#d4af37,#f6d365);
 color:#000;
 border:none;
-border-radius:25px;
+border-radius:40px;
 font-size:18px;
-text-decoration:none;
 cursor:pointer;
-box-shadow:0 0 20px gold;
+text-decoration:none;
+box-shadow:0 0 25px gold;
+transition:.3s;
+}
+.btn:hover,#goMsg:hover{transform:scale(1.07)}
+
+#songMsg{
+text-align:center;
+color:#ffd700;
+display:none;
+font-weight:bold;
 }
 
-.video-frame{
-width:350px;
-margin:20px auto;
-padding:12px;
-border:3px solid gold;
-border-radius:18px;
-background:rgba(0,0,0,.6);
-}
-
-/* عناصر متطايرة */
-.floatName{
+/* عناصر طايرة */
+.float{
 position:fixed;
 bottom:-20px;
-animation:up 6s linear;
-font-size:28px;
+animation:up 7s linear;
+pointer-events:none;
 }
 
 @keyframes up{
 to{transform:translateY(-120vh);opacity:0;}
 }
 
-.footer-text{text-align:center;margin-top:20px;}
-
 </style>
 </head>
 
 <body>
 
-<div class="title-frame">Ramadan Kareem Do3ty 🌙🏮</div>
+<div class="moon">🌙</div>
 
-<div class="frame-container">
-<div class="frame">
-<img src="1764248956999.jpg" class="photo">
+<div id="loginScreen">
+<div id="loginBox">
+<h2>الدخول مسموح فقط لـ Do3ty 👑</h2>
+<input type="password" id="pwd" placeholder="أدخلي مملكتك يا ملكتي 🌙">
+<button id="loginBtn">دخول</button>
+<div id="errorMsg" style="color:red;display:none;">الرمز غلط يا دودو 🥺</div>
 </div>
 </div>
 
-<button class="msg-btn" onclick="toggleMessage()">💌 Message for you</button>
+<script>
+loginBtn.onclick=()=>{
+pwd.value.trim()==="Do3ty♡"
+?loginScreen.style.display="none"
+:errorMsg.style.display="block";
+}
+</script>
 
-<div id="messageBox" style="display:none;text-align:center;">
-<img src="Dodo's message.jpg" style="width:330px;border-radius:15px;">
-</div>
+<div id="headerBox">Ramadan Kingdom of Do3ty 🌙🏮👑</div>
 
-<div class="video-frame">
-<video id="v1" width="100%"><source src="D36809643135.mp4"></video>
-</div>
-<button class="vbtn" onclick="toggleVid('v1',this)">▶ تشغيل / ⏸ إيقاف</button>
+<img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo">
+<div class="text-box">سأعتني بك رغم البعد بيننا 🥹♥️</div>
 
-<div class="footer-text"> ❤️🫠 كل هذا صُنع بكل حب لصغيرتي دو </div>
+<img src="5e9cf4903041a56951bf28c0286a026f.jpg" class="photo">
+<div class="text-box">كيف جعلت هذا القلب بعد حبك ناصحا ♥️</div>
 
+<img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="photo">
+<div class="text-box">لكِ في الروح عشق لا ينتهي 🫠♥️</div>
+
+<audio id="song"><source src="Dodo.song.mp3"></audio>
+
+<button class="btn" id="songBtn">❤️ تشغيل الأغنية ❤️</button>
+<div id="songMsg">رمضان كريم يا أجمل Do3ty 🌙💛</div>
+
+<video id="vid" style="display:none;" src="dodo_video.mp4"></video>
+<button class="btn" id="vidBtn">🎥 تشغيل الفيديو 🎥</button>
+
+<a id="goMsg" href="message.html">ممكن تضغطي هنا 🙈♥️🥰</a>
+
+<script>
+
+songBtn.onclick=()=>{
+song.paused?(song.play(),songMsg.style.display="block")
+:(song.pause(),songMsg.style.display="none");
+}
+
+vidBtn.onclick=()=>{
+vid.style.display="block";
+vid.paused?vid.play():vid.pause();
+}
+
+function floats(){
+const e=document.createElement("div");
+e.className="float";
+e.innerHTML=["⭐","✨","🏮","💛"][Math.floor(Math.random()*4)];
+e.style.left=Math.random()*innerWidth+"px";
+e.style.fontSize=25+Math.random()*30+"px";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),7000);
+}
+setInterval(floats,500);
+
+</script>
+
+</body>
+</html>
 <a class="back-btn" href="index.html">🔙 اضغطي هنا بس براحه 🙈😂</a>
 
 <script>
