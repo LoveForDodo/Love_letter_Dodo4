@@ -1,115 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dodo Message ❤️</title>
 
 <style>
-body {
-    margin: 0;
-    background: linear-gradient(135deg, #ffe5ec, #ffd6e8);
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    padding-bottom: 80px;
+
+body{
+margin:0;
+font-family:Tajawal,sans-serif;
+background:radial-gradient(circle at top,#0b0b2a,#02010a);
+color:#fff;
+overflow-x:hidden;
+padding-bottom:80px;
 }
 
-/* ===== عنوان Do3ty ===== */
-.title-frame {
-    text-align: center;
-    margin: 25px auto 10px;
-    padding: 12px 25px;
-    border: 5px solid #d63384;
-    width: fit-content;
-    border-radius: 15px;
-    background: white;
-    font-size: 28px;
-    font-weight: bold;
-    color: #d63384;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+/* نجوم */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(gold 1px,transparent 1px);
+background-size:40px 40px,60px 60px;
+opacity:.25;
+pointer-events:none;
 }
 
-/* ===== الإطار المعلق ===== */
-.frame-container {
-    width: 330px;
-    margin: 20px auto;
-    position: relative;
-    text-align: center;
+/* عنوان */
+.title-frame{
+text-align:center;
+margin:25px auto;
+padding:12px 25px;
+border:3px solid gold;
+border-radius:15px;
+background:rgba(0,0,0,.6);
+font-size:28px;
+color:#ffd700;
+box-shadow:0 0 25px gold;
 }
 
-.rope {
-    width: 0;
-    height: 0;
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-bottom: 60px solid #c9a06b;
-    margin: 0 auto;
+/* إطار */
+.frame-container{width:330px;margin:auto;text-align:center;}
+.frame{border:6px solid gold;border-radius:10px;background:#fff;}
+.photo{width:100%;border-radius:8px;}
+
+.msg-btn,.vbtn,.back-btn{
+display:block;
+margin:15px auto;
+padding:12px 25px;
+background:linear-gradient(45deg,#d4af37,#f6d365);
+color:#000;
+border:none;
+border-radius:25px;
+font-size:18px;
+text-decoration:none;
+cursor:pointer;
+box-shadow:0 0 20px gold;
 }
 
-.pin {
-    width: 35px;
-    height: 35px;
-    background: radial-gradient(circle, #ff4d6d, #b30027);
-    border-radius: 50%;
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
+.video-frame{
+width:350px;
+margin:20px auto;
+padding:12px;
+border:3px solid gold;
+border-radius:18px;
+background:rgba(0,0,0,.6);
 }
 
-.frame {
-    width: 330px;
-    padding: 10px;
-    background: #fff;
-    border: 8px solid #c9a06b;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+/* عناصر متطايرة */
+.floatName{
+position:fixed;
+bottom:-20px;
+animation:up 6s linear;
+font-size:28px;
 }
 
-.photo {
-    width: 100%;
-    border-radius: 8px;
+@keyframes up{
+to{transform:translateY(-120vh);opacity:0;}
 }
 
-/* ===== زر الرسالة ===== */
-.msg-btn {
-    display: block;
-    margin: 15px auto;
-    padding: 12px 25px;
-    background: #ff6b81;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 20px;
-    cursor: pointer;
+.footer-text{text-align:center;margin-top:20px;}
+
+</style>
+</head>
+
+<body>
+
+<div class="title-frame">Ramadan Kareem Do3ty 🌙🏮</div>
+
+<div class="frame-container">
+<div class="frame">
+<img src="1764248956999.jpg" class="photo">
+</div>
+</div>
+
+<button class="msg-btn" onclick="toggleMessage()">💌 Message for you</button>
+
+<div id="messageBox" style="display:none;text-align:center;">
+<img src="Dodo's message.jpg" style="width:330px;border-radius:15px;">
+</div>
+
+<div class="video-frame">
+<video id="v1" width="100%"><source src="D36809643135.mp4"></video>
+</div>
+<button class="vbtn" onclick="toggleVid('v1',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="footer-text"> ❤️🫠 كل هذا صُنع بكل حب لصغيرتي دو </div>
+
+<a class="back-btn" href="index.html">🔙 اضغطي هنا بس براحه 🙈😂</a>
+
+<script>
+
+function toggleMessage(){
+messageBox.style.display=
+messageBox.style.display==="none"?"block":"none";
 }
 
-/* ===== صورة الرسالة ===== */
-#messageBox {
-    display: none;
-    text-align: center;
-    margin: 25px auto;
+function toggleVid(id,btn){
+const v=document.getElementById(id);
+v.paused?(v.play(),btn.innerHTML="⏸ إيقاف")
+:(v.pause(),btn.innerHTML="▶ تشغيل");
 }
 
-.message-photo {
-    width: 330px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+function floatName(){
+const t=document.createElement("div");
+t.className="floatName";
+t.innerHTML=Math.random()>.5?"⭐":"🏮";
+t.style.left=Math.random()*innerWidth+"px";
+document.body.appendChild(t);
+setTimeout(()=>t.remove(),6000);
 }
+setInterval(floatName,700);
 
-/* ===== الفيديو ===== */
-.video-frame {
-    width: 350px;
-    margin: 20px auto;
-    padding: 12px;
-    border: 6px solid #ff8fa3;
-    border-radius: 18px;
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-}
+</script>
 
-.vbtn {
+</body>
+</html>.vbtn {
     display: block;
     margin: 10px auto 25px;
     padding: 10px 22px;
