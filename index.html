@@ -66,7 +66,7 @@ to{transform:rotate(10deg);}
 position:fixed;
 bottom:20px;
 left:20px;
-width:130px;
+width:140px;
 cursor:pointer;
 z-index:20;
 transition:transform .2s;
@@ -98,16 +98,20 @@ position:fixed;
 top:40%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:45px;
-color:gold;
+font-size:55px;
+font-family:"Aref Ruqaa", serif;
+color:#ffd700;
 text-align:center;
 display:none;
 z-index:60;
 animation:boomText 0.6s ease-out;
 text-shadow:
 0 0 10px gold,
-0 0 20px orange,
-0 0 40px gold;
+0 0 25px orange,
+0 0 45px gold,
+0 0 70px #ffcc00;
+letter-spacing:2px;
+line-height:1.6;
 }
 @keyframes boomText{
 from{transform:translate(-50%,-50%) scale(0.5); opacity:0;}
@@ -222,6 +226,7 @@ font-weight:bold;
 box-shadow:0 0 20px gold;
 }
 
+/* قلوب ونجوم */
 .heart,.star{
 position:fixed;
 bottom:-20px;
@@ -250,24 +255,28 @@ animation:floatUp 4s linear;
 <source src="boom.mp3" type="audio/mpeg">
 </audio>
 <div id="cannonFlash"></div>
-<div id="cannonText">🌙 كل سنة وانتي طيبة يا دودو 💛</div>
+<div id="cannonText">🌙💛 كل سنة وانتي طيبة يا دودو </div>
+
+<!-- باقي موقعك زي ما هو بدون حذف أي حاجة -->
 
 <div id="loginScreen">
 <div id="loginBox">
-<h2>Access is restricted for D♡3ty only🌙🥰♥️</h2>
-<input type="password" id="pwd" placeholder="🥰♥️ادخلي مملكتك يا صغيرتي">
+<h2>  Access is restricted for D♡3ty only🌙🥰♥️ </h2>
+<input type="password" id="pwd" placeholder=" 🥰♥️ادخلي مملكتك يا صغيرتي">
 <button id="loginBtn">دخول</button>
 <div id="errorMsg">الرمز غلط يا دودو 🥺</div>
 </div>
 </div>
 
 <div class="ramadan-msg">رمضان أحلى مع دودو 💛🌙</div>
+
 <div id="headerBox">Ramadan with Dodo 🥰🌙</div>
 
 <img src="Howl9939ej3ikn99399.jpg" class="photo">
+
 <div class="text-box">
-🤍💛🌙 كل سنة وانتي طيبة يا أجمل حاجة في حياتي<br>
-🤲🏻♥️ وربنا يجمعنا في رمضان وكل رمضان
+ 🤍💛🌙 كل سنة وانتي طيبة يا أجمل حاجة في حياتي  
+ 🤲🏻♥️ وربنا يجمعنا في رمضان وكل رمضان 
 </div>
 
 <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo">
@@ -295,6 +304,11 @@ animation:floatUp 4s linear;
 <button class="btn" id="songBtn">🌙 تشغيل الأغنية</button>
 <div id="songMsg">يارب يجمعنا في رمضان وكل رمضان 🤲💛</div>
 
+<video id="vid" style="display:none;" src="dodo_video.mp4"></video>
+<button class="btn" id="vidBtn">🎥 تشغيل الفيديو</button>
+
+<a id="goMsg" href="message.html">رمضان كريم يا ملكتي 🌙💛</a>
+
 <script>
 document.getElementById("loginBtn").onclick=function(){
 let v=document.getElementById("pwd").value.trim();
@@ -305,22 +319,38 @@ document.getElementById("errorMsg").style.display="block";
 }
 };
 
-const cannon=document.getElementById("ramadanCannon");
-const cannonSound=document.getElementById("cannonSound");
-const flash=document.getElementById("cannonFlash");
-const cannonText=document.getElementById("cannonText");
+const song=document.getElementById("song");
+const songBtn=document.getElementById("songBtn");
+const msg=document.getElementById("songMsg");
+let playingSong=false;
+songBtn.onclick=()=>{
+if(!playingSong){
+song.play();
+playingSong=true;
+songBtn.innerText="⏸️ إيقاف الأغنية";
+msg.style.display="block";
+}else{
+song.pause();
+playingSong=false;
+songBtn.innerText="🌙 تشغيل الأغنية";
+msg.style.display="none";
+}
+};
 
-cannon.onclick=()=>{
-cannon.classList.add("shake");
-cannonSound.currentTime=0;
-cannonSound.play();
-flash.style.opacity="1";
-setTimeout(()=>{flash.style.opacity="0";},200);
-cannonText.style.display="block";
-setTimeout(()=>{
-cannonText.style.display="none";
-cannon.classList.remove("shake");
-},2000);
+const vid=document.getElementById("vid");
+const vidBtn=document.getElementById("vidBtn");
+let playingVid=false;
+vidBtn.onclick=()=>{
+if(!playingVid){
+vid.style.display="block";
+vid.play();
+playingVid=true;
+vidBtn.innerText="⏸️ إيقاف الفيديو";
+}else{
+vid.pause();
+playingVid=false;
+vidBtn.innerText="🎥 تشغيل الفيديو";
+}
 };
 
 function floatThings(){
