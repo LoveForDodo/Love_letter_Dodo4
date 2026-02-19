@@ -55,12 +55,63 @@ animation:drop 3s ease-out forwards, swing 3s ease-in-out infinite alternate;
 .l2{left:50%;}
 .l3{left:85%;}
 
-@keyframes drop{
-to{top:0;}
-}
+@keyframes drop{ to{top:0;} }
 @keyframes swing{
 from{transform:rotate(-10deg);}
 to{transform:rotate(10deg);}
+}
+
+/* ===== مدفع رمضان ===== */
+#ramadanCannon{
+position:fixed;
+bottom:20px;
+left:20px;
+width:130px;
+cursor:pointer;
+z-index:20;
+transition:transform .2s;
+}
+#ramadanCannon:hover{
+transform:scale(1.1);
+}
+@keyframes shake{
+0%{transform:translateX(0);}
+25%{transform:translateX(-5px);}
+50%{transform:translateX(5px);}
+75%{transform:translateX(-5px);}
+100%{transform:translateX(0);}
+}
+.shake{ animation:shake 0.3s; }
+
+#cannonFlash{
+position:fixed;
+inset:0;
+background:white;
+opacity:0;
+pointer-events:none;
+z-index:50;
+transition:opacity 0.2s;
+}
+
+#cannonText{
+position:fixed;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:45px;
+color:gold;
+text-align:center;
+display:none;
+z-index:60;
+animation:boomText 0.6s ease-out;
+text-shadow:
+0 0 10px gold,
+0 0 20px orange,
+0 0 40px gold;
+}
+@keyframes boomText{
+from{transform:translate(-50%,-50%) scale(0.5); opacity:0;}
+to{transform:translate(-50%,-50%) scale(1); opacity:1;}
 }
 
 /* شاشة الدخول */
@@ -105,7 +156,6 @@ font-weight:bold;
 }
 #errorMsg{color:#ff4d6d;display:none;margin-top:10px;}
 
-/* رسالة رمضان */
 .ramadan-msg{
 text-align:center;
 font-family:"Aref Ruqaa",serif;
@@ -120,7 +170,6 @@ from{opacity:0;transform:translateY(-20px);}
 to{opacity:1;transform:translateY(0);}
 }
 
-/* العنوان */
 #headerBox{
 text-align:center;
 font-size:28px;
@@ -129,7 +178,6 @@ margin-top:20px;
 text-shadow:0 0 15px gold;
 }
 
-/* الصور */
 .photo{
 width:94%;
 display:block;
@@ -145,7 +193,6 @@ font-size:20px;
 font-weight:bold;
 }
 
-/* أزرار */
 .btn{
 display:block;
 margin:20px auto;
@@ -175,7 +222,6 @@ font-weight:bold;
 box-shadow:0 0 20px gold;
 }
 
-/* قلوب ونجوم */
 .heart,.star{
 position:fixed;
 bottom:-20px;
@@ -198,24 +244,30 @@ animation:floatUp 4s linear;
 <div class="lantern l2">🏮</div>
 <div class="lantern l3">🏮</div>
 
+<!-- ===== مدفع رمضان ===== -->
+<img src="madfa3ramadan.jpg" id="ramadanCannon">
+<audio id="cannonSound">
+<source src="boom.mp3" type="audio/mpeg">
+</audio>
+<div id="cannonFlash"></div>
+<div id="cannonText">🌙 كل سنة وانتي طيبة يا دودو 💛</div>
+
 <div id="loginScreen">
 <div id="loginBox">
-<h2>  Access is restricted for D♡3ty only🌙🥰♥️ </h2>
-<input type="password" id="pwd" placeholder=" 🥰♥️ادخلي مملكتك يا صغيرتي">
+<h2>Access is restricted for D♡3ty only🌙🥰♥️</h2>
+<input type="password" id="pwd" placeholder="🥰♥️ادخلي مملكتك يا صغيرتي">
 <button id="loginBtn">دخول</button>
 <div id="errorMsg">الرمز غلط يا دودو 🥺</div>
 </div>
 </div>
 
 <div class="ramadan-msg">رمضان أحلى مع دودو 💛🌙</div>
-
 <div id="headerBox">Ramadan with Dodo 🥰🌙</div>
 
-  <img src="Howl9939ej3ikn99399.jpg" class="photo">
-
+<img src="Howl9939ej3ikn99399.jpg" class="photo">
 <div class="text-box">
- 🤍💛🌙 كل سنة وانتي طيبة يا أجمل حاجة في حياتي  
- 🤲🏻♥️ وربنا يجمعنا في رمضان وكل رمضان 
+🤍💛🌙 كل سنة وانتي طيبة يا أجمل حاجة في حياتي<br>
+🤲🏻♥️ وربنا يجمعنا في رمضان وكل رمضان
 </div>
 
 <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo">
@@ -243,11 +295,6 @@ animation:floatUp 4s linear;
 <button class="btn" id="songBtn">🌙 تشغيل الأغنية</button>
 <div id="songMsg">يارب يجمعنا في رمضان وكل رمضان 🤲💛</div>
 
-<video id="vid" style="display:none;" src="dodo_video.mp4"></video>
-<button class="btn" id="vidBtn">🎥 تشغيل الفيديو</button>
-
-<a id="goMsg" href="message.html">رمضان كريم يا ملكتي 🌙💛</a>
-
 <script>
 document.getElementById("loginBtn").onclick=function(){
 let v=document.getElementById("pwd").value.trim();
@@ -258,38 +305,22 @@ document.getElementById("errorMsg").style.display="block";
 }
 };
 
-const song=document.getElementById("song");
-const songBtn=document.getElementById("songBtn");
-const msg=document.getElementById("songMsg");
-let playingSong=false;
-songBtn.onclick=()=>{
-if(!playingSong){
-song.play();
-playingSong=true;
-songBtn.innerText="⏸️ إيقاف الأغنية";
-msg.style.display="block";
-}else{
-song.pause();
-playingSong=false;
-songBtn.innerText="🌙 تشغيل الأغنية";
-msg.style.display="none";
-}
-};
+const cannon=document.getElementById("ramadanCannon");
+const cannonSound=document.getElementById("cannonSound");
+const flash=document.getElementById("cannonFlash");
+const cannonText=document.getElementById("cannonText");
 
-const vid=document.getElementById("vid");
-const vidBtn=document.getElementById("vidBtn");
-let playingVid=false;
-vidBtn.onclick=()=>{
-if(!playingVid){
-vid.style.display="block";
-vid.play();
-playingVid=true;
-vidBtn.innerText="⏸️ إيقاف الفيديو";
-}else{
-vid.pause();
-playingVid=false;
-vidBtn.innerText="🎥 تشغيل الفيديو";
-}
+cannon.onclick=()=>{
+cannon.classList.add("shake");
+cannonSound.currentTime=0;
+cannonSound.play();
+flash.style.opacity="1";
+setTimeout(()=>{flash.style.opacity="0";},200);
+cannonText.style.display="block";
+setTimeout(()=>{
+cannonText.style.display="none";
+cannon.classList.remove("shake");
+},2000);
 };
 
 function floatThings(){
