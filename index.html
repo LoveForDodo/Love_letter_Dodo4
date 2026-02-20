@@ -361,6 +361,33 @@ document.body.appendChild(h);
 setTimeout(()=>h.remove(),4000);
 }
 setInterval(floatThings,500);
+ <script> 
+
+<!-- سكريبت مدفع رمضان -->
+<script>
+const cannon = document.getElementById("ramadanCannon");
+const flash = document.getElementById("cannonFlash");
+const text = document.getElementById("cannonText");
+const sound = document.getElementById("cannonSound");
+
+cannon.addEventListener("click", () => {
+
+  cannon.classList.add("shake");
+  setTimeout(() => cannon.classList.remove("shake"), 300);
+
+  sound.currentTime = 0;
+  sound.play();
+
+  flash.style.opacity = "1";
+  setTimeout(() => flash.style.opacity = "0", 200);
+
+  text.style.display = "block";
+
+  setTimeout(() => {
+    text.style.display = "none";
+  }, 4000);
+
+});
 </script>
 
 </body>
