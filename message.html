@@ -3,136 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Ramadan with you 🫠🌙❤️</title>
+<title>Happy Birthday My Queen 🎂💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-    margin:0;
-    font-family:'Cairo', sans-serif;
-    background:linear-gradient(to bottom,#0f2027,#203a43,#2c5364);
-    color:#fff;
-    overflow-x:hidden;
-    padding-bottom:80px;
+margin:0;
+font-family:'Cairo', sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+background-size:400% 400%;
+animation:bgMove 12s infinite alternate;
+color:#fff;
+overflow-x:hidden;
+padding-bottom:80px;
 }
 
-/* هلال */
-.moon{
-    position:fixed;
-    top:40px;
-    right:40px;
-    font-size:80px;
-    color:gold;
-    opacity:.9;
-    text-shadow:0 0 20px gold;
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
 }
 
-/* نجوم */
-.star{
-    position:fixed;
-    width:3px;
-    height:3px;
-    background:gold;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
-}
-@keyframes twinkle{
-    from{opacity:.3;}
-    to{opacity:1;}
-}
-
-/* العنوان */
+/* عنوان */
 .title-frame{
-    text-align:center;
-    margin:30px auto;
-    padding:15px 30px;
-    border:2px solid gold;
-    width:fit-content;
-    border-radius:20px;
-    font-size:28px;
-    font-weight:bold;
-    background:rgba(0,0,0,.4);
-    box-shadow:0 0 25px rgba(255,215,0,.6);
+text-align:center;
+margin:30px auto;
+padding:15px 30px;
+border:2px solid white;
+width:fit-content;
+border-radius:20px;
+font-size:30px;
+font-weight:bold;
+background:rgba(255,255,255,.2);
+box-shadow:0 0 25px rgba(255,255,255,.6);
+font-family:"Pacifico",cursive;
 }
 
-/* الفريم */
+/* فريم الصور */
 .frame-container{
-    width:330px;
-    margin:20px auto;
-    text-align:center;
-}
-.frame{
-    border:6px solid gold;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 25px rgba(255,215,0,.5);
-}
-.photo{
-    width:100%;
+width:330px;
+margin:20px auto;
+text-align:center;
 }
 
-/* زر */
+.frame{
+border:6px solid white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 25px rgba(255,255,255,.5);
+}
+
+.photo{
+width:100%;
+}
+
 .msg-btn,.vbtn,.back-btn button{
-    display:block;
-    margin:15px auto;
-    padding:10px 25px;
-    background:gold;
-    color:#000;
-    border:none;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
-    font-weight:bold;
+display:block;
+margin:15px auto;
+padding:10px 25px;
+background:white;
+color:#ff4081;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
 }
 
 .video-frame{
-    width:350px;
-    margin:20px auto;
-    padding:12px;
-    border:2px solid gold;
-    border-radius:18px;
-    background:rgba(0,0,0,.4);
-    box-shadow:0 0 20px rgba(255,215,0,.4);
+width:350px;
+margin:20px auto;
+padding:12px;
+border:2px solid white;
+border-radius:18px;
+background:rgba(255,255,255,.15);
+box-shadow:0 0 20px rgba(255,255,255,.4);
 }
 
 .decor{
-    text-align:center;
-    font-size:22px;
-    margin:25px 0;
-    color:gold;
+text-align:center;
+font-size:22px;
+margin:25px 0;
+color:white;
 }
 
 .footer-text{
-    text-align:center;
-    font-size:20px;
-    margin-top:25px;
-    line-height:1.7;
+text-align:center;
+font-size:20px;
+margin-top:25px;
+line-height:1.7;
 }
 
-textarea{
-    background:rgba(255,255,255,.1);
-    color:white;
-    border:1px solid gold;
+/* بالونات */
+.balloon{
+position:fixed;
+bottom:-150px;
+font-size:40px;
+animation:floatUp 8s linear infinite;
 }
 
-form button{
-    background:gold;
-    color:black;
-}
-
-.floatName{
-    position:fixed;
-    bottom:-20px;
-    font-size:24px;
-    color:gold;
-    animation:floatUp 4s linear;
-    pointer-events:none;
-}
 @keyframes floatUp{
-    0%{transform:translateY(0);opacity:1;}
-    100%{transform:translateY(-120vh);opacity:0;}
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* كونفتي */
+.confetti{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(0);}
+100%{transform:translateY(110vh);}
+}
+
+/* اسم متطاير */
+.floatName{
+position:fixed;
+bottom:-20px;
+font-size:24px;
+color:white;
+animation:floatUp 4s linear;
+pointer-events:none;
 }
 
 </style>
@@ -140,9 +136,9 @@ form button{
 
 <body>
 
-<div class="moon">🌙</div>
+<div class="title-frame">🎂 Happy Birthday Dodo 💖</div>
 
-<div class="title-frame"> 🙈♥️🥰رمضان أحلى مع أم تاليا</div>
+<!-- كل محتواك زي ما هو بدون حذف -->
 
 <div class="frame-container">
 <div class="frame">
@@ -156,9 +152,6 @@ form button{
 <img src="Dodo's message.jpg" style="width:330px;border-radius:15px;">
 </div>
 
-<!-- الفيديوهات كما هي بدون تغيير -->
-  <!-- ===== فيديوهاتك كلها زي ما هي ===== -->
-
 <div class="video-frame"><video id="v1" width="100%"><source src="D36809643135.mp4"></video></div>
 <button class="vbtn" onclick="toggleVid('v1',this)">▶ تشغيل / ⏸ إيقاف</button>
 
@@ -171,7 +164,7 @@ form button{
 <div class="video-frame"><video id="v4" width="100%"><source src="R4684478532.mp4"></video></div>
 <button class="vbtn" onclick="toggleVid('v4',this)">▶ تشغيل / ⏸ إيقاف</button>
 
-<div class="decor">🌙 ✨ 🌙 ✨ 🌙</div>
+<div class="decor">🎉 ✨ 🎉 ✨ 🎉</div>
 
 <div class="footer-text">1/12/2025 🥰♥️</div>
 
@@ -181,9 +174,9 @@ form button{
 <div class="video-frame"><video id="v6" width="100%"><source src="VN٢٠٢٥١٢٠١_٠٠٢١٣٩.mp4"></video></div>
 <button class="vbtn" onclick="toggleVid('v6',this)">▶ تشغيل / ⏸ إيقاف</button>
 
-<div class="decor">🌙 ✨ 🌙 ✨ 🌙</div>
+<div class="decor">🎂 💖 🎂 💖 🎂</div>
 
-<img src="IMG_20251201_114150_508.jpg" style="width:330px;display:block;margin:20px auto;border-radius:15px;border:2px solid gold;">
+<img src="IMG_20251201_114150_508.jpg" style="width:330px;display:block;margin:20px auto;border-radius:15px;border:2px solid white;">
 
 <div class="footer-text">
 أتمنّى أن تدركِ أنني لا أراك كبديلٍ<br>
@@ -192,103 +185,107 @@ form button{
 والوصول والنّجاة ♥️🗝
 </div>
 
-<!-- باقي الفيديوهات كلها زي ما هي بدون أي حذف -->
-
-<!-- قسم الرسائل -->
-
 <div style="max-width:400px; margin:50px auto; text-align:center;">
-  <h2 style="color:gold;"> 💌 رسالتك ليا في رمضان </h2>
+<h2 style="color:white;"> 💌 رسالتك ليا في عيد ميلادك </h2>
 
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
-  <form action="https://formsubmit.co/bodyashraf244@gmail.com"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="showMessage();">
+<form action="https://formsubmit.co/bodyashraf244@gmail.com"
+method="POST"
+target="hidden_iframe"
+onsubmit="showMessage();">
 
-    <textarea name="message" placeholder="🌙 اكتبلي دعوة حلوة في رمضان..."
-      required
-      style="width:100%; height:120px; padding:10px; border-radius:10px;"></textarea>
+<textarea name="message" placeholder="🎂 اكتبلي كلمة حلوة..."
+required
+style="width:100%; height:120px; padding:10px; border-radius:10px;"></textarea>
 
-    <input type="hidden" name="_subject" value="💌 رسالة جديدة من موقع دودو">
-    <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="💌 رسالة جديدة من موقع دودو">
+<input type="hidden" name="_captcha" value="false">
 
-    <br><br>
-    <button type="submit">
-      إرسال ✨
-    </button>
-  </form>
+<br><br>
+<button type="submit">إرسال ✨</button>
+</form>
 
-  <p id="successMsg" style="display:none; color:#4caf50; margin-top:15px;">
-    وصلتني رسالتك 🤍🌙
-  </p>
+<p id="successMsg" style="display:none; color:#fff; margin-top:15px;">
+وصلتني رسالتك 🤍🎂
+</p>
 </div>
 
-    <div class="video-frame">
-
-    <video id="v7" width="100%">
-        <source src="VID_20260219_001859_448.mp4" type="video/mp4">
-    </video>
-
-    <div class="video-text">
-        🌙❤️ كل سنه وأنتي طيبه يا ورحي وكل سنه واحنا مع بعض 
-    </div>
-
+<div class="video-frame">
+<video id="v7" width="100%">
+<source src="VID_20260219_001859_448.mp4" type="video/mp4">
+</video>
+<div class="video-text">
+🎂❤️ كل سنه وانتي طيبه يا روحي
+</div>
 </div>
 
 <button class="vbtn" onclick="toggleVid('v7', this)">▶ تشغيل / ⏸ إيقاف</button>
 
-    <div class="frame-container">
+<div class="frame-container">
 <div class="frame">
 <img src="Valentine Love Letter_20260206.jpg" class="photo">
 </div>
-    </div>
-    
-<div class="footer-text"> ❤️🫠 كل ده معمول بحب ل دودو  </div>
+</div>
 
-<a href="index.html" style="display:block;text-align:center;margin:30px auto;color:gold;font-size:20px;text-decoration:none;">
-🔙 اضغطي هنا بس براحه 🙈🌙
+<div class="footer-text"> ❤️🫠 كل ده معمول بحب ل دودو </div>
+
+<a href="index.html" style="display:block;text-align:center;margin:30px auto;color:white;font-size:20px;text-decoration:none;">
+🔙 اضغطي هنا بس براحه 🎂
 </a>
 
 <div class="footer-text" style="font-size:14px;">Powered by Body © 2026</div>
 
 <script>
+
 function toggleMessage(){
-    const box=document.getElementById("messageBox");
-    box.style.display=box.style.display==="none"?"block":"none";
+const box=document.getElementById("messageBox");
+box.style.display=box.style.display==="none"?"block":"none";
 }
 
 function toggleVid(id,btn){
-    const v=document.getElementById(id);
-    if(v.paused){v.play();btn.innerHTML="⏸ إيقاف";}
-    else{v.pause();btn.innerHTML="▶ تشغيل";}
+const v=document.getElementById(id);
+if(v.paused){v.play();btn.innerHTML="⏸ إيقاف";}
+else{v.pause();btn.innerHTML="▶ تشغيل";}
 }
 
 function showMessage(){
-    setTimeout(()=>{
-        document.getElementById("successMsg").style.display="block";
-    },800);
+setTimeout(()=>{
+document.getElementById("successMsg").style.display="block";
+},800);
 }
 
-/* نجوم عشوائية */
-for(let i=0;i<40;i++){
-    let s=document.createElement("div");
-    s.className="star";
-    s.style.top=Math.random()*100+"vh";
-    s.style.left=Math.random()*100+"vw";
-    document.body.appendChild(s);
+/* بالونات */
+for(let i=0;i<10;i++){
+let b=document.createElement("div");
+b.classList.add("balloon");
+b.innerHTML="🎈";
+b.style.left=Math.random()*100+"%";
+b.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(b);
 }
 
-/* الاسم المتطاير */
+/* كونفتي */
+setInterval(()=>{
+let c=document.createElement("div");
+c.classList.add("confetti");
+c.innerHTML=Math.random()>0.5?"🎉":"✨";
+c.style.left=Math.random()*100+"%";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),4000);
+},300);
+
+/* اسم متطاير */
 function createFloatingName(){
-    const t=document.createElement("div");
-    t.className="floatName";
-    t.innerHTML="🌙❤️ دو";
-    t.style.left=Math.random()*window.innerWidth+"px";
-    document.body.appendChild(t);
-    setTimeout(()=>t.remove(),4000);
+const t=document.createElement("div");
+t.className="floatName";
+t.innerHTML="🎂💖 دودو";
+t.style.left=Math.random()*window.innerWidth+"px";
+document.body.appendChild(t);
+setTimeout(()=>t.remove(),4000);
 }
-setInterval(createFloatingName,600);
+setInterval(createFloatingName,700);
+
 </script>
 
 </body>
