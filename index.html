@@ -3,250 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramadan with Do3ty🌙🥰♥️ </title>
+<title>Eid with Do3ty 🎉🥰♥️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-background:linear-gradient(to bottom,#0f0c29,#1b1b3a,#24243e);
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 font-family:"Cairo",sans-serif;
 overflow-x:hidden;
 color:white;
 }
 
-/* نجوم */
-body::before{
-content:"";
+/* كونفتي */
+.confetti{
 position:fixed;
-inset:0;
-background:url("https://www.transparenttextures.com/patterns/stardust.png");
-opacity:.4;
-animation:moveStars 60s linear infinite;
-z-index:-1;
+top:-20px;
+font-size:20px;
+animation:fall 4s linear infinite;
 }
-@keyframes moveStars{
-from{background-position:0 0;}
-to{background-position:1000px 1000px;}
+@keyframes fall{
+0%{transform:translateY(0);}
+100%{transform:translateY(110vh);}
 }
 
-/* هلال */
-.moon{
-position:fixed;
-top:30px;
-right:30px;
-font-size:60px;
-animation:glowMoon 2s infinite alternate;
-}
-@keyframes glowMoon{
-from{text-shadow:0 0 10px gold;}
-to{text-shadow:0 0 30px #ffd700;}
-}
-
-/* فوانيس */
-.lantern{
-position:fixed;
-top:-100px;
-font-size:40px;
-animation:drop 3s ease-out forwards, swing 3s ease-in-out infinite alternate;
-}
-.l1{left:10%;}
-.l2{left:50%;}
-.l3{left:85%;}
-@keyframes drop{ to{top:0;} }
-@keyframes swing{
-from{transform:rotate(-10deg);}
-to{transform:rotate(10deg);}
-}
-
-/* ===== مدفع رمضان ===== */
-#ramadanCannon{
-position:fixed;
-bottom:20px;
-left:20px;
-width:140px;
-cursor:pointer;
-z-index:20;
-transition:transform .2s;
-}
-#ramadanCannon:hover{transform:scale(1.1);}
-@keyframes shake{
-0%{transform:translateX(0);}
-25%{transform:translateX(-5px);}
-50%{transform:translateX(5px);}
-75%{transform:translateX(-5px);}
-100%{transform:translateX(0);}
-}
-.shake{animation:shake 0.3s;}
-
-#cannonFlash{
-position:fixed;
-inset:0;
-background:white;
-opacity:0;
-pointer-events:none;
-z-index:50;
-transition:opacity 0.2s;
-}
-
-#cannonText{
+/* نص العيد */
+#eidText{
 position:fixed;
 top:40%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:55px;
-font-family:"Aref Ruqaa", serif;
-color:#ffd700;
-text-align:center;
+font-size:50px;
+color:gold;
 display:none;
-z-index:60;
-animation:boomText 0.6s ease-out;
-text-shadow:0 0 10px gold,0 0 25px orange,0 0 45px gold;
-}
-@keyframes boomText{
-from{transform:translate(-50%,-50%) scale(0.5); opacity:0;}
-to{transform:translate(-50%,-50%) scale(1); opacity:1;}
+text-align:center;
+z-index:9999;
+text-shadow:0 0 20px gold,0 0 40px orange;
 }
 
-/* باقي تنسيقك زي ما هو */
+/* باقي التنسيق زي ما هو */
 #loginScreen{position:fixed;inset:0;background:rgba(10,10,30,.95);display:flex;justify-content:center;align-items:center;z-index:999;}
 #loginBox{background:#1c1c3c;padding:25px;border-radius:20px;width:80%;max-width:350px;text-align:center;border:2px solid gold;box-shadow:0 0 25px rgba(255,215,0,.3);}
 #loginBox h2{color:gold;}
 #pwd{width:90%;padding:10px;border-radius:10px;border:1px solid gold;text-align:center;margin-bottom:10px;background:#111;color:white;}
 #loginBtn{padding:10px 20px;background:gold;border:none;color:black;border-radius:12px;cursor:pointer;font-weight:bold;}
 #errorMsg{color:#ff4d6d;display:none;margin-top:10px;}
-.ramadan-msg{text-align:center;font-family:"Aref Ruqaa",serif;font-size:40px;color:gold;margin-top:100px;animation:fadeIn 2s ease-out;text-shadow:0 0 20px gold;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-#headerBox{text-align:center;font-size:28px;color:gold;margin-top:20px;text-shadow:0 0 15px gold;}
-.photo{width:94%;display:block;margin:25px auto 10px auto;border-radius:15px;box-shadow:0 8px 25px rgba(255,215,0,.3);border:2px solid rgba(255,215,0,.4);}
+
+.ramadan-msg{text-align:center;font-size:40px;color:gold;margin-top:100px;}
+#headerBox{text-align:center;font-size:28px;color:gold;margin-top:20px;}
+
+.photo{width:94%;display:block;margin:25px auto 10px auto;border-radius:15px;box-shadow:0 8px 25px rgba(255,215,0,.3);}
 .text-box{text-align:center;margin-bottom:25px;font-size:20px;font-weight:bold;}
+
 .btn{display:block;margin:20px auto;padding:12px 25px;background:linear-gradient(45deg,gold,orange);color:black;border:none;border-radius:35px;font-size:18px;cursor:pointer;font-weight:bold;box-shadow:0 0 15px gold;}
+
 #songMsg{text-align:center;color:gold;font-size:20px;display:none;font-weight:bold;}
+
 #goMsg{margin:40px auto;display:block;background:gold;padding:12px 30px;font-size:20px;color:black;border-radius:25px;text-align:center;width:fit-content;text-decoration:none;font-weight:bold;box-shadow:0 0 20px gold;}
-.heart,.star{position:fixed;bottom:-20px;pointer-events:none;animation:floatUp 4s linear;}
-.heart{color:#ff4d6d;}
-.star{color:gold;}
-@keyframes floatUp{0%{transform:translateY(0) scale(1);opacity:1;}100%{transform:translateY(-120vh) scale(1.6);opacity:0;}}
+
 </style>
 </head>
 
 <body>
 
-<div class="moon">🌙</div>
-<div class="lantern l1">🏮</div>
-<div class="lantern l2">🏮</div>
-<div class="lantern l3">🏮</div>
+<div id="eidText">🎉 عيد سعيد يا دودو 💖✨</div>
 
-<!-- مدفع -->
+<!-- مدفع زي ما هو -->
 <img src="madfa3ramadan.png" id="ramadanCannon">
 <audio id="cannonSound"><source src="boom.mp3" type="audio/mpeg"></audio>
 <div id="cannonFlash"></div>
-<div id="cannonText"> 💛🌙 صوما مقبولا يا دودو </div>
+<div id="cannonText"> 🎉 كل سنة وانتي طيبة يا دودو 💖 </div>
 
-<!-- باقي محتواك بالكامل -->
 <div id="loginScreen">
 <div id="loginBox">
-<h2>  Access is restricted for D♡3ty only🌙🥰♥️ </h2>
-<input type="password" id="pwd" placeholder=" 🥰♥️ادخلي مملكتك يا صغيرتي">
+<h2> Access is restricted for D♡3ty only 🎉 </h2>
+<input type="password" id="pwd">
 <button id="loginBtn">دخول</button>
 <div id="errorMsg">الرمز غلط يا دودو 🥺</div>
 </div>
 </div>
 
-<div class="ramadan-msg">رمضان أحلى مع دودو 💛🌙</div>
-<div id="headerBox">Ramadan with Dodo 🥰🌙</div>
+<div class="ramadan-msg">🎉 عيد سعيد يا دودو 💛</div>
+<div id="headerBox">Eid with Dodo 🎉🥰</div>
 
 <img src="Howl9939ej3ikn99399.jpg" class="photo">
-<div class="text-box">
-🤍💛🌙 كل سنة وانتي طيبة يا أجمل حاجة في حياتي  
-🤲🏻♥️ وربنا يجمعنا في رمضان وكل رمضان 
-</div>
+<div class="text-box">كل سنة وانتي طيبة يا أجمل حاجة في حياتي 💖</div>
 
 <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo">
-<div class="text-box">
-سأعتني بك ، رغم البعد بيننا <br>
-سأعتني بك في دعائى ، وفي صلاتي ، <br>
-وبين أحرفي وثنايا ذاكرتي 🥹♥️
-</div>
+<div class="text-box">يارب تكوني أسعد إنسانة في الدنيا 🎉✨</div>
 
 <img src="5e9cf4903041a56951bf28c0286a026f.jpg" class="photo">
-<div class="text-box">
-كيف جعلتَ هذا القلب <br>
-بعد حبك ناصعا ؟ ♥️
-</div>
+<div class="text-box">وجودك في حياتي هو العيد الحقيقي 💛</div>
 
 <img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="photo">
-<div class="text-box">
-ولكِ في الروح عشق لا ينتهي ، <br>
-فكيف لا تدمنك روحي وأنتِ دوائها.!🫠♥️
-</div>
+<div class="text-box">كل سنة وانتي روحي ♥️</div>
 
-
-<audio id="song"><source src="5976444834_yb778hw7u.mp3" type="audio/mpeg"></audio>
-<button class="btn" id="songBtn">🌙 تشغيل الأغنية</button>
-<div id="songMsg"> 🥰🍓حطيتلك الأغنيه اللي انتي بتحبيها اهووو </div>
+<audio id="song"><source src="5976444834_yb778hw7u.mp3"></audio>
+<button class="btn" id="songBtn">🎵 تشغيل الأغنية</button>
+<div id="songMsg">الأغنية اللي بتحبيها 💖</div>
 
 <video id="vid" style="display:none;" src="VID_20260309_220809_870.mp4"></video>
 <button class="btn" id="vidBtn">🎥 تشغيل الفيديو</button>
 
-<a id="goMsg" href="message.html">رمضان كريم يا ملكتي 🌙💛</a>
+<a id="goMsg" href="message.html">🎁 مفاجأة العيد</a>
 
 <script>
-// الدخول
+
+// كونفتي
+setInterval(()=>{
+let c=document.createElement("div");
+c.className="confetti";
+c.innerHTML=Math.random()>0.5?"🎉":"✨";
+c.style.left=Math.random()*100+"%";
+document.body.appendChild(c);
+setTimeout(()=>c.remove(),4000);
+},300);
+
+// رسالة العيد
+document.body.onclick=function(){
+let t=document.getElementById("eidText");
+t.style.display="block";
+setTimeout(()=>t.style.display="none",3000);
+};
+
+// باقي الكود زي ما هو (مش متغير)
 document.getElementById("loginBtn").onclick=function(){
 let v=document.getElementById("pwd").value.trim();
 if(v==="Do3ty♡"){document.getElementById("loginScreen").style.display="none";}
 else{document.getElementById("errorMsg").style.display="block";}
 };
 
-// الأغنية
 const song=document.getElementById("song");
 const songBtn=document.getElementById("songBtn");
 const msg=document.getElementById("songMsg");
 let playingSong=false;
 songBtn.onclick=()=>{
-if(!playingSong){song.play();playingSong=true;songBtn.innerText="⏸️ إيقاف الأغنية";msg.style.display="block";}
-else{song.pause();playingSong=false;songBtn.innerText="🌙 تشغيل الأغنية";msg.style.display="none";}
+if(!playingSong){song.play();playingSong=true;msg.style.display="block";}
+else{song.pause();playingSong=false;msg.style.display="none";}
 };
 
-// الفيديو
 const vid=document.getElementById("vid");
 const vidBtn=document.getElementById("vidBtn");
 let playingVid=false;
 vidBtn.onclick=()=>{
-if(!playingVid){vid.style.display="block";vid.play();playingVid=true;vidBtn.innerText="⏸️ إيقاف الفيديو";}
-else{vid.pause();playingVid=false;vidBtn.innerText="🎥 تشغيل الفيديو";}
+if(!playingVid){vid.style.display="block";vid.play();playingVid=true;}
+else{vid.pause();playingVid=false;}
 };
 
-// قلوب
-function floatThings(){
-const h=document.createElement("div");
-h.classList.add(Math.random()>0.5?"heart":"star");
-h.innerHTML=Math.random()>0.5?"💛":"⭐";
-h.style.left=Math.random()*window.innerWidth+"px";
-h.style.fontSize=(20+Math.random()*20)+"px";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),4000);
-}
-setInterval(floatThings,500);
-
-// ===== تشغيل المدفع =====
+// المدفع
 const cannon=document.getElementById("ramadanCannon");
 const flash=document.getElementById("cannonFlash");
 const text=document.getElementById("cannonText");
 const sound=document.getElementById("cannonSound");
 
 cannon.onclick=function(){
-cannon.classList.add("shake");
-setTimeout(()=>cannon.classList.remove("shake"),300);
-sound.currentTime=0;
 sound.play();
 flash.style.opacity="1";
 setTimeout(()=>flash.style.opacity="0",200);
 text.style.display="block";
-setTimeout(()=>text.style.display="none",4000);
+setTimeout(()=>text.style.display="none",3000);
 };
+
 </script>
 
 </body>
