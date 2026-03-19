@@ -10,55 +10,72 @@
 <style>
 
 body{
-margin:0;
-font-family:'Cairo', sans-serif;
-background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
-color:#fff;
-overflow-x:hidden;
-padding-bottom:80px;
+    margin:0;
+    font-family:'Cairo', sans-serif;
+    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
+    color:#fff;
+    overflow-x:hidden;
+    padding-bottom:80px;
 }
 
 /* ✨ لمعة */
 body::before{
-content:"";
-position:fixed;
-inset:0;
-background:radial-gradient(circle at 20% 30%, rgba(255,215,0,.2), transparent),
-           radial-gradient(circle at 80% 70%, rgba(255,255,255,.1), transparent);
-z-index:-1;
+    content:"";
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle at 20% 30%, rgba(255,215,0,.2), transparent),
+               radial-gradient(circle at 80% 70%, rgba(255,255,255,.1), transparent);
+    z-index:-1;
 }
 
-/* ❌ إخفاء الهلال */
+/* ❌ إخفاء الهلال والنجوم بدون حذفهم */
 .moon{display:none;}
-
-/* ❌ إخفاء النجوم */
 .star{display:none;}
 
-/* عنوان */
+/* العنوان */
 .title-frame{
-text-align:center;
-margin:30px auto;
-padding:15px 30px;
-border:2px solid gold;
-width:fit-content;
-border-radius:20px;
-font-size:28px;
-font-weight:bold;
-background:rgba(0,0,0,.4);
-box-shadow:0 0 25px rgba(255,215,0,.6);
+    text-align:center;
+    margin:30px auto;
+    padding:15px 30px;
+    border:2px solid gold;
+    width:fit-content;
+    border-radius:20px;
+    font-size:28px;
+    font-weight:bold;
+    background:rgba(0,0,0,.4);
+    box-shadow:0 0 25px rgba(255,215,0,.6);
 }
 
 /* الفريم */
 .frame{
-border:6px solid gold;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 0 25px rgba(255,215,0,.5);
+    border:6px solid gold;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(255,215,0,.5);
 }
 
 .video-frame{
-border:2px solid gold;
-background:rgba(0,0,0,.4);
+    width:350px;
+    margin:20px auto;
+    padding:12px;
+    border:2px solid gold;
+    border-radius:18px;
+    background:rgba(0,0,0,.4);
+    box-shadow:0 0 20px rgba(255,215,0,.4);
+}
+
+.decor{
+    text-align:center;
+    font-size:22px;
+    margin:25px 0;
+    color:gold;
+}
+
+.footer-text{
+    text-align:center;
+    font-size:20px;
+    margin-top:25px;
+    line-height:1.7;
 }
 
 /* 🎈 بالونات */
@@ -85,16 +102,10 @@ animation:fall 4s linear infinite;
 100%{transform:translateY(110vh);}
 }
 
-/* النصوص */
-.decor{color:gold;}
-.footer-text{color:#fff;}
-
 </style>
 </head>
 
 <body>
-
-<!-- كل المحتوى بتاعك زي ما هو بدون حذف -->
 
 <div class="moon">🌙</div>
 
@@ -112,14 +123,92 @@ animation:fall 4s linear infinite;
 <img src="Dodo's message.jpg" style="width:330px;border-radius:15px;">
 </div>
 
-<!-- الفيديوهات زي ما هي -->
-<!-- (مش هغيرهم خالص) -->
+<!-- الفيديوهات كلها زي ما هي -->
+<div class="video-frame"><video id="v1" width="100%"><source src="D36809643135.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v1',this)">▶ تشغيل / ⏸ إيقاف</button>
 
-<!-- باقي الكود كله زي ما هو بدون حذف -->
+<div class="video-frame"><video id="v2" width="100%"><source src="Asala_details_something.mp4.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v2',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v3" width="100%"><source src="VID_20251128_131744_658.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v3',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v4" width="100%"><source src="R4684478532.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v4',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="decor">🎉 ✨ 🎉 ✨ 🎉</div>
+
+<div class="footer-text">1/12/2025 🥰♥️</div>
+
+<div class="video-frame"><video id="v5" width="100%"><source src="VID_20251201_000802_188.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v5',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v6" width="100%"><source src="VN٢٠٢٥١٢٠١_٠٠٢١٣٩.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v6',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v7" width="100%"><source src="VID_20260306_004438_075.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v7',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v8" width="100%"><source src="Cfjf883838826_4290cyr3.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v8',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="video-frame"><video id="v9" width="100%"><source src="VID_20260318_004903_880.mp4"></video></div>
+<button class="vbtn" onclick="toggleVid('v9',this)">▶ تشغيل / ⏸ إيقاف</button>
+
+<div class="decor">🎉 ✨ 🎉 ✨ 🎉</div>
+
+<img src="IMG_20251201_114150_508.jpg" style="width:330px;display:block;margin:20px auto;border-radius:15px;border:2px solid gold;">
+
+<div class="footer-text">
+أتمنّى أن تدركِ أنني لا أراك كبديلٍ<br>
+أو كخطّةٍ إحتياطيّة<br>
+لطالما رأيتُك الطريقَ كلُّه<br>
+والوصول والنّجاة ♥️🗝
+</div>
+
+<div style="max-width:400px; margin:50px auto; text-align:center;">
+<h2 style="color:gold;"> 💌 رسالتك ليا في العيد </h2>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<form action="https://formsubmit.co/bodyashraf244@gmail.com"
+method="POST"
+target="hidden_iframe"
+onsubmit="showMessage();">
+
+<textarea name="message" placeholder="🎉 اكتبلي كلمة حلوة..."
+required style="width:100%; height:120px; padding:10px; border-radius:10px;"></textarea>
+
+<input type="hidden" name="_subject" value="💌 رسالة جديدة من موقع دودو">
+<input type="hidden" name="_captcha" value="false">
+
+<br><br>
+<button type="submit">إرسال ✨</button>
+</form>
+
+<p id="successMsg" style="display:none; color:#4caf50; margin-top:15px;">
+وصلتني رسالتك 🤍🎉
+</p>
+</div>
 
 <script>
 
-/* الكود القديم زي ما هو */
+function toggleMessage(){
+const box=document.getElementById("messageBox");
+box.style.display=box.style.display==="none"?"block":"none";
+}
+
+function toggleVid(id,btn){
+const v=document.getElementById(id);
+if(v.paused){v.play();btn.innerHTML="⏸ إيقاف";}
+else{v.pause();btn.innerHTML="▶ تشغيل";}
+}
+
+function showMessage(){
+setTimeout(()=>{
+document.getElementById("successMsg").style.display="block";
+},800);
+}
 
 /* 🎈 بالونات */
 for(let i=0;i<12;i++){
