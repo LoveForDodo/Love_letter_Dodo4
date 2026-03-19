@@ -3,90 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eid with Do3ty 🎉🥰♥️</title>
+<title> Happy Eid with Do3ty 🎉♥️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
 font-family:"Cairo",sans-serif;
 overflow-x:hidden;
 color:white;
 }
 
-/* كونفتي */
+/* لمعة خفيفة */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:radial-gradient(circle at 20% 30%, rgba(255,215,0,.2), transparent),
+           radial-gradient(circle at 80% 70%, rgba(255,255,255,.1), transparent);
+z-index:-1;
+}
+
+/* عنوان */
+.eid-title{
+text-align:center;
+font-size:45px;
+color:gold;
+margin-top:120px;
+text-shadow:0 0 15px gold;
+}
+
+/* صور */
+.photo{
+width:94%;
+display:block;
+margin:25px auto;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(255,255,255,.3);
+}
+
+/* نص */
+.text-box{
+text-align:center;
+margin-bottom:25px;
+font-size:20px;
+font-weight:bold;
+}
+
+/* أزرار */
+.btn{
+display:block;
+margin:20px auto;
+padding:12px 25px;
+background:gold;
+color:black;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* زر الصفحة التانية */
+#goMsg{
+margin:40px auto;
+display:block;
+background:white;
+padding:12px 30px;
+font-size:20px;
+color:black;
+border-radius:25px;
+text-align:center;
+width:fit-content;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* تسجيل الدخول */
+#loginScreen{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.9);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#loginBox{
+background:#111;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:2px solid gold;
+}
+
+#pwd{
+padding:10px;
+border-radius:10px;
+border:1px solid gold;
+text-align:center;
+}
+
+#loginBtn{
+margin-top:10px;
+padding:10px 20px;
+background:gold;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+#errorMsg{
+color:red;
+display:none;
+margin-top:10px;
+}
+
+/* 🎈 بالونات */
+.balloon{
+position:fixed;
+bottom:-150px;
+font-size:40px;
+animation:floatUp 8s linear infinite;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* 🎊 كونفتي */
 .confetti{
 position:fixed;
 top:-20px;
 font-size:20px;
 animation:fall 4s linear infinite;
 }
+
 @keyframes fall{
 0%{transform:translateY(0);}
 100%{transform:translateY(110vh);}
 }
-
-/* نص العيد */
-#eidText{
-position:fixed;
-top:40%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:50px;
-color:gold;
-display:none;
-text-align:center;
-z-index:9999;
-text-shadow:0 0 20px gold,0 0 40px orange;
-}
-
-/* باقي التنسيق زي ما هو */
-#loginScreen{position:fixed;inset:0;background:rgba(10,10,30,.95);display:flex;justify-content:center;align-items:center;z-index:999;}
-#loginBox{background:#1c1c3c;padding:25px;border-radius:20px;width:80%;max-width:350px;text-align:center;border:2px solid gold;box-shadow:0 0 25px rgba(255,215,0,.3);}
-#loginBox h2{color:gold;}
-#pwd{width:90%;padding:10px;border-radius:10px;border:1px solid gold;text-align:center;margin-bottom:10px;background:#111;color:white;}
-#loginBtn{padding:10px 20px;background:gold;border:none;color:black;border-radius:12px;cursor:pointer;font-weight:bold;}
-#errorMsg{color:#ff4d6d;display:none;margin-top:10px;}
-
-.ramadan-msg{text-align:center;font-size:40px;color:gold;margin-top:100px;}
-#headerBox{text-align:center;font-size:28px;color:gold;margin-top:20px;}
-
-.photo{width:94%;display:block;margin:25px auto 10px auto;border-radius:15px;box-shadow:0 8px 25px rgba(255,215,0,.3);}
-.text-box{text-align:center;margin-bottom:25px;font-size:20px;font-weight:bold;}
-
-.btn{display:block;margin:20px auto;padding:12px 25px;background:linear-gradient(45deg,gold,orange);color:black;border:none;border-radius:35px;font-size:18px;cursor:pointer;font-weight:bold;box-shadow:0 0 15px gold;}
-
-#songMsg{text-align:center;color:gold;font-size:20px;display:none;font-weight:bold;}
-
-#goMsg{margin:40px auto;display:block;background:gold;padding:12px 30px;font-size:20px;color:black;border-radius:25px;text-align:center;width:fit-content;text-decoration:none;font-weight:bold;box-shadow:0 0 20px gold;}
-
 </style>
 </head>
 
 <body>
 
-<div id="eidText">🎉 عيد سعيد يا دودو 💖✨</div>
+<div class="eid-title">🎉 عيد سعيد يا دودو 💖</div>
 
-<!-- مدفع زي ما هو -->
-<img src="madfa3ramadan.png" id="ramadanCannon">
-<audio id="cannonSound"><source src="boom.mp3" type="audio/mpeg"></audio>
-<div id="cannonFlash"></div>
-<div id="cannonText"> 🎉 كل سنة وانتي طيبة يا دودو 💖 </div>
-
+<!-- تسجيل الدخول -->
 <div id="loginScreen">
 <div id="loginBox">
-<h2> Access is restricted for D♡3ty only 🎉 </h2>
+<h2>Access for My Queen 👑</h2>
 <input type="password" id="pwd">
 <button id="loginBtn">دخول</button>
-<div id="errorMsg">الرمز غلط يا دودو 🥺</div>
+<div id="errorMsg">غلط يا دودو 🥺</div>
 </div>
 </div>
 
-<div class="ramadan-msg">🎉 عيد سعيد يا دودو 💛</div>
-<div id="headerBox">Eid with Dodo 🎉🥰</div>
-
+<!-- محتواك زي ما هو -->
 <img src="Howl9939ej3ikn99399.jpg" class="photo">
 <div class="text-box">كل سنة وانتي طيبة يا أجمل حاجة في حياتي 💖</div>
 
@@ -99,71 +177,81 @@ text-shadow:0 0 20px gold,0 0 40px orange;
 <img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="photo">
 <div class="text-box">كل سنة وانتي روحي ♥️</div>
 
+<!-- الأغنية -->
 <audio id="song"><source src="5976444834_yb778hw7u.mp3"></audio>
 <button class="btn" id="songBtn">🎵 تشغيل الأغنية</button>
-<div id="songMsg">الأغنية اللي بتحبيها 💖</div>
 
+<!-- الفيديو -->
 <video id="vid" style="display:none;" src="VID_20260309_220809_870.mp4"></video>
 <button class="btn" id="vidBtn">🎥 تشغيل الفيديو</button>
 
-<a id="goMsg" href="message.html">🎁 مفاجأة العيد</a>
+<!-- زر الصفحة التانية -->
+<a id="goMsg" href="message.html">🎁 مفاجأة</a>
 
 <script>
 
-// كونفتي
+/* تسجيل الدخول */
+document.getElementById("loginBtn").onclick=function(){
+let v=document.getElementById("pwd").value.trim();
+if(v==="Do3ty♡"){
+document.getElementById("loginScreen").style.display="none";
+}else{
+document.getElementById("errorMsg").style.display="block";
+}
+};
+
+/* الأغنية */
+const song=document.getElementById("song");
+const songBtn=document.getElementById("songBtn");
+let playingSong=false;
+
+songBtn.onclick=()=>{
+if(!playingSong){
+song.play();
+playingSong=true;
+songBtn.innerText="⏸️ إيقاف";
+}else{
+song.pause();
+playingSong=false;
+songBtn.innerText="🎵 تشغيل";
+}
+};
+
+/* الفيديو */
+const vid=document.getElementById("vid");
+const vidBtn=document.getElementById("vidBtn");
+let playingVid=false;
+
+vidBtn.onclick=()=>{
+if(!playingVid){
+vid.style.display="block";
+vid.play();
+playingVid=true;
+}else{
+vid.pause();
+playingVid=false;
+}
+};
+
+/* 🎈 بالونات */
+for(let i=0;i<12;i++){
+let b=document.createElement("div");
+b.classList.add("balloon");
+b.innerHTML=Math.random()>0.5?"🎈":"🎁";
+b.style.left=Math.random()*100+"%";
+b.style.animationDuration=(6+Math.random()*5)+"s";
+document.body.appendChild(b);
+}
+
+/* 🎊 كونفتي */
 setInterval(()=>{
 let c=document.createElement("div");
-c.className="confetti";
+c.classList.add("confetti");
 c.innerHTML=Math.random()>0.5?"🎉":"✨";
 c.style.left=Math.random()*100+"%";
 document.body.appendChild(c);
 setTimeout(()=>c.remove(),4000);
 },300);
-
-// رسالة العيد
-document.body.onclick=function(){
-let t=document.getElementById("eidText");
-t.style.display="block";
-setTimeout(()=>t.style.display="none",3000);
-};
-
-// باقي الكود زي ما هو (مش متغير)
-document.getElementById("loginBtn").onclick=function(){
-let v=document.getElementById("pwd").value.trim();
-if(v==="Do3ty♡"){document.getElementById("loginScreen").style.display="none";}
-else{document.getElementById("errorMsg").style.display="block";}
-};
-
-const song=document.getElementById("song");
-const songBtn=document.getElementById("songBtn");
-const msg=document.getElementById("songMsg");
-let playingSong=false;
-songBtn.onclick=()=>{
-if(!playingSong){song.play();playingSong=true;msg.style.display="block";}
-else{song.pause();playingSong=false;msg.style.display="none";}
-};
-
-const vid=document.getElementById("vid");
-const vidBtn=document.getElementById("vidBtn");
-let playingVid=false;
-vidBtn.onclick=()=>{
-if(!playingVid){vid.style.display="block";vid.play();playingVid=true;}
-else{vid.pause();playingVid=false;}
-};
-
-// المدفع
-const cannon=document.getElementById("ramadanCannon");
-const flash=document.getElementById("cannonFlash");
-const text=document.getElementById("cannonText");
-const sound=document.getElementById("cannonSound");
-
-cannon.onclick=function(){
-sound.play();
-flash.style.opacity="1";
-setTimeout(()=>flash.style.opacity="0",200);
-text.style.display="block";
-setTimeout(()=>text.style.display="none",3000);
-};
 
 </script>
 
