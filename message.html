@@ -1,266 +1,206 @@
+
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Eid with you 🎉❤️</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
+<meta name="theme-color" content="#160f22">
+<title>A Little Love for Do3ty ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-
+:root{
+  --bg:#160f22;--bg2:#25142b;--pink:#ffb6c9;--rose:#f47caa;
+  --gold:#f5d58b;--cream:#fff4e8;--glass:rgba(255,255,255,.075);
+  --line:rgba(245,213,139,.35);--shadow:0 18px 55px rgba(0,0,0,.32);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-    margin:0;
-    font-family:'Cairo', sans-serif;
-    background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);
-    color:#fff;
-    overflow-x:hidden;
-    padding-bottom:80px;
+  margin:0;min-height:100vh;overflow-x:hidden;color:var(--cream);
+  font-family:"Cairo",sans-serif;
+  background:
+    radial-gradient(ellipse at 15% 8%,rgba(244,124,170,.18),transparent 35%),
+    radial-gradient(ellipse at 85% 40%,rgba(245,213,139,.12),transparent 32%),
+    linear-gradient(145deg,var(--bg),var(--bg2) 55%,#101a32);
 }
-
-/* إخفاء الهلال بدون حذف */
-.moon{
-    display:none;
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle at 50% 100%,rgba(255,182,201,.08),transparent 45%)}
+button,a,input{font:inherit}
+.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.ambient span{position:absolute;color:var(--gold);opacity:.55;animation:twinkle 3s ease-in-out infinite alternate}
+.ambient span:nth-child(1){top:12%;left:8%;font-size:17px}
+.ambient span:nth-child(2){top:25%;right:9%;font-size:12px;animation-delay:.8s}
+.ambient span:nth-child(3){top:62%;left:5%;font-size:14px;animation-delay:1.2s}
+.ambient span:nth-child(4){top:78%;right:7%;font-size:18px;animation-delay:.4s}
+.moon{position:absolute;top:34px;left:7%;font-size:48px;filter:drop-shadow(0 0 16px rgba(245,213,139,.55))}
+.page{position:relative;z-index:1;width:min(920px,92%);margin:auto;padding:30px 0 70px}
+.hero{text-align:center;padding:54px 16px 28px}
+.eyebrow{display:inline-block;color:var(--gold);border:1px solid var(--line);background:rgba(255,255,255,.05);
+  border-radius:999px;padding:6px 18px;font-size:13px;letter-spacing:.4px}
+.eid-title{font-size:clamp(32px,7vw,58px);line-height:1.35;color:var(--pink);margin:18px 0 8px;
+  text-shadow:0 0 28px rgba(244,124,170,.35);font-weight:800}
+.subtitle{color:#f8dfd9;font-size:clamp(15px,3vw,19px);margin:0}
+.ornament{color:var(--gold);letter-spacing:9px;margin:20px 0;font-size:19px}
+.content-card{max-width:720px;margin:20px auto;padding:clamp(18px,4vw,30px);
+  background:var(--glass);border:1px solid var(--line);border-radius:28px;
+  box-shadow:var(--shadow);backdrop-filter:blur(12px)}
+.photo{width:100%;max-width:100%;display:block;margin:0 auto 18px;border-radius:20px;
+  border:1px solid rgba(255,255,255,.2);box-shadow:0 12px 30px rgba(0,0,0,.28);object-fit:cover}
+.text-box{text-align:center;margin:10px auto 26px;font-size:clamp(17px,3.8vw,21px);
+  font-weight:700;line-height:1.9;color:var(--cream)}
+.btn,#goMsg{
+  display:block;width:fit-content;max-width:100%;margin:18px auto;padding:12px 27px;
+  border:1px solid rgba(255,255,255,.25);border-radius:999px;cursor:pointer;text-decoration:none;
+  color:#311927;background:linear-gradient(135deg,#ffe9bd,#f5c77e 55%,#f4a6bd);
+  font-weight:800;font-size:17px;box-shadow:0 8px 24px rgba(244,166,189,.18);
+  transition:transform .2s ease,filter .2s ease,box-shadow .2s ease
 }
-
-/* إخفاء النجوم بدون حذف */
-.star{
-    position:fixed;
-    width:3px;
-    height:3px;
-    background:gold;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
-    display:none;
+.btn:hover,#goMsg:hover{transform:translateY(-3px);filter:brightness(1.06);box-shadow:0 12px 30px rgba(244,166,189,.28)}
+.btn:active,#goMsg:active{transform:translateY(0)}
+.media-note{text-align:center;color:#f3dce6;font-size:14px;margin:8px 0 0}
+#vid{width:100%;max-width:560px;border-radius:18px;margin:12px auto;display:block;border:1px solid var(--line)}
+#goMsg{font-size:19px;padding:14px 34px;margin-top:34px}
+.footer-note{text-align:center;color:rgba(255,244,232,.65);font-size:13px;margin-top:32px}
+#loginScreen{position:fixed;inset:0;background:rgba(12,7,17,.91);display:flex;justify-content:center;align-items:center;
+  z-index:999;padding:20px;backdrop-filter:blur(12px)}
+#loginBox{width:min(390px,100%);padding:32px 25px;text-align:center;border-radius:28px;
+  border:1px solid var(--gold);background:linear-gradient(145deg,#2c1830,#171326);
+  box-shadow:0 20px 70px rgba(0,0,0,.55),0 0 30px rgba(245,213,139,.12)}
+.login-crown{font-size:38px}
+#loginBox h2{color:var(--pink);margin:10px 0 18px;font-size:23px}
+#pwd{width:100%;padding:13px 15px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(255,255,255,.08);color:white;text-align:center;outline:none}
+#pwd:focus{border-color:var(--pink);box-shadow:0 0 0 3px rgba(244,124,170,.12)}
+#loginBtn{margin-top:14px;padding:11px 30px;border:0;border-radius:999px;background:var(--gold);
+  color:#29182a;font-weight:800;cursor:pointer}
+#errorMsg{color:#ff9aab;display:none;margin:12px 0 0}
+.balloon,.confetti{position:fixed;pointer-events:none;z-index:2}
+.balloon{bottom:-150px;font-size:35px;animation:floatUp 8s linear infinite}
+.confetti{top:-25px;font-size:18px;animation:fall 4s linear forwards}
+@keyframes floatUp{to{transform:translateY(-120vh);opacity:0}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:0}}
+@keyframes twinkle{from{opacity:.25;transform:scale(.8)}to{opacity:.9;transform:scale(1.15)}}
+@media(max-width:600px){
+  .page{width:min(94%,520px);padding-top:14px}.hero{padding-top:65px}
+  .moon{top:15px;left:5%;font-size:38px}.content-card{border-radius:22px}
+  .photo{border-radius:15px}
 }
-
-@keyframes twinkle{
-    from{opacity:.3;}
-    to{opacity:1;}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}
 }
-
-/* العنوان */
-.title-frame{
-    text-align:center;
-    margin:30px auto;
-    padding:15px 30px;
-    border:2px solid gold;
-    width:fit-content;
-    border-radius:20px;
-    font-size:28px;
-    font-weight:bold;
-    background:rgba(0,0,0,.4);
-    box-shadow:0 0 25px rgba(255,215,0,.6);
-}
-
-/* الفريم */
-.frame-container{
-    width:330px;
-    margin:20px auto;
-    text-align:center;
-}
-.frame{
-    border:6px solid gold;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 25px rgba(255,215,0,.5);
-}
-.photo{
-    width:100%;
-}
-
-/* زر */
-.msg-btn,.vbtn,.back-btn button{
-    display:block;
-    margin:15px auto;
-    padding:10px 25px;
-    background:gold;
-    color:#000;
-    border:none;
-    border-radius:30px;
-    font-size:18px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.video-frame{
-    width:350px;
-    margin:20px auto;
-    padding:12px;
-    border:2px solid gold;
-    border-radius:18px;
-    background:rgba(0,0,0,.4);
-    box-shadow:0 0 20px rgba(255,215,0,.4);
-}
-
-.decor{
-    text-align:center;
-    font-size:22px;
-    margin:25px 0;
-    color:gold;
-}
-
-.footer-text{
-    text-align:center;
-    font-size:20px;
-    margin-top:25px;
-    line-height:1.7;
-}
-
-textarea{
-    background:rgba(255,255,255,.1);
-    color:white;
-    border:1px solid gold;
-}
-
-form button{
-    background:gold;
-    color:black;
-}
-
-.floatName{
-    position:fixed;
-    bottom:-20px;
-    font-size:24px;
-    color:gold;
-    animation:floatUp 4s linear;
-    pointer-events:none;
-}
-
-@keyframes floatUp{
-    0%{transform:translateY(0);opacity:1;}
-    100%{transform:translateY(-120vh);opacity:0;}
-}
-
 </style>
 </head>
-
 <body>
-
-<div class="moon">🌙</div>
-
-<div class="title-frame"> 🎉 العيد أحلى مع أم تاليا 💖</div>
-
-<div class="frame-container">
-<div class="frame">
-<img src="1764248956999.jpg" class="photo">
-</div>
+<div class="ambient" aria-hidden="true">
+  <span>✦</span><span>✧</span><span>✦</span><span>✧</span>
+  <div class="moon">🌙</div>
 </div>
 
-<button class="msg-btn" onclick="toggleMessage()">💌 رسالة ل دودو </button>
-
-<div id="messageBox" style="display:none;text-align:center;">
-<img src="Dodo's message.jpg" style="width:330px;border-radius:15px;">
+<div id="loginScreen">
+  <div id="loginBox">
+    <div class="login-crown">👑</div>
+    <h2>Access for My Queen</h2>
+    <p style="color:#e9d5e1;margin:0 0 18px">المكان ده معمول مخصوص ليكي يا دودو ❤️</p>
+    <input type="password" id="pwd" placeholder="كلمة السر" autocomplete="off">
+    <button id="loginBtn" type="button">دخول ✨</button>
+    <div id="errorMsg">غلط يا دودو 🥺 جربي تاني</div>
+  </div>
 </div>
 
-<div class="video-frame"><video id="v1" width="100%"><source src="D36809643135.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v1',this)">▶ تشغيل / ⏸ إيقاف</button>
+<main class="page">
+  <header class="hero">
+    <span class="eyebrow">A little corner made just for you</span>
+    <h1 class="eid-title">حكايتنا الحلوة يا دودو ❤️</h1>
+    <p class="subtitle">كل تفصيلة هنا بتفكرني قد إيه إنتِ غالية عندي</p>
+    <div class="ornament">✧ ۞ ✧</div>
+  </header>
 
-<div class="video-frame"><video id="v2" width="100%"><source src="Asala_details_something.mp4.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v2',this)">▶ تشغيل / ⏸ إيقاف</button>
+  <section class="content-card" aria-label="ذكرياتنا الجميلة">
+    <img src="Howl9939ej3ikn99399.jpg" class="photo" alt="ذكرى جميلة">
+    <div class="text-box">وجودك في حياتي من أجمل الحاجات اللي حصلتلي 💖</div>
 
-<div class="video-frame"><video id="v3" width="100%"><source src="VID_20251128_131744_658.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v3',this)">▶ تشغيل / ⏸ إيقاف</button>
+    <img src="48501a3cd0ffd3b5c11411651d43b36b.jpg" class="photo" alt="ذكرى جميلة">
+    <div class="text-box">نفسي أشوف ضحكتك دايمًا منورة الدنيا ✨</div>
 
-<div class="video-frame"><video id="v4" width="100%"><source src="R4684478532.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v4',this)">▶ تشغيل / ⏸ إيقاف</button>
+    <img src="5e9cf4903041a56951bf28c0286a026f.jpg" class="photo" alt="ذكرى جميلة">
+    <div class="text-box">وجودك جنبي بيخلّي الأيام أحنّ وأجمل 💛</div>
 
-<div class="decor">🎉 ✨ 🎉 ✨ 🎉</div>
+    <img src="82ae37130c74dc47e09559f89ad11ab5.jpg" class="photo" alt="ذكرى جميلة">
+    <div class="text-box">إنتِ مش مجرد جزء من حياتي، إنتِ حتة من قلبي ♥️</div>
 
-<div class="footer-text">1/12/2025 🥰♥️</div>
+    <div class="ornament">♡ ✦ ♡</div>
+    <audio id="song"><source src="5976444834_yb778hw7u.mp3"></audio>
+    <button class="btn" id="songBtn" type="button">🎵 تشغيل الأغنية</button>
+    <p class="media-note">شغّلي الأغنية وخليها تبقى ذكرى حلوة لينا 🎶</p>
 
-<div class="video-frame"><video id="v5" width="100%"><source src="VID_20251201_000802_188.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v5',this)">▶ تشغيل / ⏸ إيقاف</button>
+    <video id="vid" playsinline preload="metadata" style="display:none;" src="VID_20260309_220809_870.mp4"></video>
+    <button class="btn" id="vidBtn" type="button">🎥 تشغيل الفيديو</button>
 
-<div class="video-frame"><video id="v6" width="100%"><source src="VN٢٠٢٥١٢٠١_٠٠٢١٣٩.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v6',this)">▶ تشغيل / ⏸ إيقاف</button>
-
-<div class="video-frame"><video id="v7" width="100%"><source src="VID_20260306_004438_075.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v7',this)">▶ تشغيل / ⏸ إيقاف</button>
-
-<div class="video-frame"><video id="v8" width="100%"><source src="Cfjf883838826_4290cyr3.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v8',this)">▶ تشغيل / ⏸ إيقاف</button>
-
-<div class="video-frame"><video id="v9" width="100%"><source src="VID_20260318_004903_880.mp4"></video></div>
-<button class="vbtn" onclick="toggleVid('v9',this)">▶ تشغيل / ⏸ إيقاف</button>
-
-<div class="decor">🎉 ✨ 🎉 ✨ 🎉</div>
-
-<img src="IMG_20251201_114150_508.jpg" style="width:330px;display:block;margin:20px auto;border-radius:15px;border:2px solid gold;">
-
-<div class="footer-text">
-أتمنّى أن تدركِ أنني لا أراك كبديلٍ<br>
-أو كخطّةٍ إحتياطيّة<br>
-لطالما رأيتُك الطريقَ كلُّه<br>
-والوصول والنّجاة ♥️🗝
-</div>
-
-<div style="max-width:400px; margin:50px auto; text-align:center;">
-  <h2 style="color:gold;"> 💌 رسالتك ليا في العيد </h2>
-
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
-
-  <form action="https://formsubmit.co/bodyashraf244@gmail.com"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="showMessage();">
-
-    <textarea name="message" placeholder="🎉 اكتبلي كلمة حلوة في العيد..."
-      required
-      style="width:100%; height:120px; padding:10px; border-radius:10px;"></textarea>
-
-    <input type="hidden" name="_subject" value="💌 رسالة جديدة من موقع دودو">
-    <input type="hidden" name="_captcha" value="false">
-
-    <br><br>
-    <button type="submit">
-      إرسال ✨
-    </button>
-  </form>
-
-  <p id="successMsg" style="display:none; color:#4caf50; margin-top:15px;">
-    وصلتني رسالتك 🤍🎉
-  </p>
-</div>
-
-<!-- باقي الكود زي ما هو بدون أي تغيير -->
+    <a id="goMsg" href="message.html">💌 افتحي رسالتي ليكي</a>
+  </section>
+  <div class="footer-note">اتعمل بكل الحب… ليكي إنتِ ❤️</div>
+</main>
 
 <script>
-function toggleMessage(){
-const box=document.getElementById("messageBox");
-box.style.display=box.style.display==="none"?"block":"none";
+const loginBtn=document.getElementById("loginBtn");
+const pwd=document.getElementById("pwd");
+const loginScreen=document.getElementById("loginScreen");
+const errorMsg=document.getElementById("errorMsg");
+function login(){
+  if(pwd.value.trim()==="Do3ty♡"){
+    loginScreen.style.display="none";
+  }else{
+    errorMsg.style.display="block";
+    pwd.focus();
+  }
 }
+loginBtn.onclick=login;
+pwd.addEventListener("keydown",e=>{if(e.key==="Enter")login();});
 
-function toggleVid(id,btn){
-const v=document.getElementById(id);
-if(v.paused){v.play();btn.innerHTML="⏸ إيقاف";}
-else{v.pause();btn.innerHTML="▶ تشغيل";}
-}
+const song=document.getElementById("song");
+const songBtn=document.getElementById("songBtn");
+let playingSong=false;
+songBtn.onclick=()=>{
+  if(!playingSong){
+    song.play().then(()=>{playingSong=true;songBtn.innerText="⏸️ إيقاف الأغنية";})
+      .catch(()=>{songBtn.innerText="تعذّر التشغيل - اضغطي مرة أخرى";});
+  }else{
+    song.pause();playingSong=false;songBtn.innerText="🎵 تشغيل الأغنية";
+  }
+};
+song.addEventListener("ended",()=>{playingSong=false;songBtn.innerText="🎵 تشغيل الأغنية";});
 
-function showMessage(){
-setTimeout(()=>{
-document.getElementById("successMsg").style.display="block";
-},800);
-}
+const vid=document.getElementById("vid");
+const vidBtn=document.getElementById("vidBtn");
+let playingVid=false;
+vidBtn.onclick=()=>{
+  if(!playingVid){
+    vid.style.display="block";
+    vid.play().then(()=>{playingVid=true;vidBtn.innerText="⏸️ إيقاف الفيديو";})
+      .catch(()=>{vidBtn.innerText="تعذّر التشغيل - اضغطي مرة أخرى";});
+  }else{
+    vid.pause();playingVid=false;vidBtn.innerText="🎥 تشغيل الفيديو";
+  }
+};
+vid.addEventListener("ended",()=>{playingVid=false;vidBtn.innerText="🎥 تشغيل الفيديو";});
 
-for(let i=0;i<40;i++){
-let s=document.createElement("div");
-s.className="star";
-s.style.top=Math.random()*100+"vh";
-s.style.left=Math.random()*100+"vw";
-document.body.appendChild(s);
+for(let i=0;i<12;i++){
+  const b=document.createElement("div");
+  b.className="balloon";b.textContent=Math.random()>.5?"♡":"♥";
+  b.style.left=Math.random()*100+"%";
+  b.style.animationDuration=(6+Math.random()*5)+"s";
+  b.style.animationDelay=(-Math.random()*8)+"s";
+  document.body.appendChild(b);
 }
-
-function createFloatingName(){
-const t=document.createElement("div");
-t.className="floatName";
-t.innerHTML="🎉❤️ دودو";
-t.style.left=Math.random()*window.innerWidth+"px";
-document.body.appendChild(t);
-setTimeout(()=>t.remove(),4000);
-}
-setInterval(createFloatingName,600);
+setInterval(()=>{
+  const c=document.createElement("div");
+  c.className="confetti";c.textContent=Math.random()>.5?"♡":"✦";
+  c.style.left=Math.random()*100+"%";
+  document.body.appendChild(c);
+  setTimeout(()=>c.remove(),4000);
+},700);
 </script>
-
 </body>
 </html>
